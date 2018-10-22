@@ -19,23 +19,6 @@ function handleForm() {
         console.log(response);
       });
 
-
-    // var settings = {
-    //     "async": true,
-    //     "crossDomain": true,
-    //     "url": "https://cors-anywhere.herokuapp.com/images-api.nasa.gov/search?media_type=image&q=neptune&page=1",
-    //     "method": "GET",
-    //     "headers": {
-    //       "api_key": "MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk",
-    //       "cache-control": "no-cache",
-    //       "postman-token": "9c3e986e-5fca-0ab6-9487-aa4ac5b87ec5",
-    //       "X-Requested-With" : "XMLHttpRequest"
-    //     }
-    //   }
-      
-    //   $.ajax(settings).done(function (response) {
-    //     console.log(response);
-    //   });
 }
 
 $(handleForm);
