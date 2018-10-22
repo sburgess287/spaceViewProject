@@ -4,20 +4,20 @@ function handleForm() {
     console.log('handleForm ran');
 
     // // Sample query from: https://api.nasa.gov/planetary/apod?api_key=MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk
-    var settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://api.nasa.gov/planetary/apod?api_key=MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk",
-        "method": "GET",
-        "headers": {
-          "cache-control": "no-cache",
-          "postman-token": "16b06f60-911f-b377-7af0-909378870dff"
-        }
-      }
+    // var settings = {
+    //     "async": true,
+    //     "crossDomain": true,
+    //     "url": "https://api.nasa.gov/planetary/apod?api_key=MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk",
+    //     "method": "GET",
+    //     "headers": {
+    //       "cache-control": "no-cache",
+    //       "postman-token": "16b06f60-911f-b377-7af0-909378870dff"
+    //     }
+    //   }
       
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      });
+    //   $.ajax(settings).done(function (response) {
+    //     console.log(response);
+    //   });
 
 }
 
