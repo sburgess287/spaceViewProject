@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SpaceView: Planets, Stars, Nebula</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="float-grid.css" />
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header role="banner">
+            <h1>Space View: Planets, Stars, Nebula...</h1>
+
+        </header>
+        <!-- update aria-live role to "assertive" once content is dynamic -->
+        <main role="main" aria-live="polite">
+            <section role="region">
+                <div class="container col-12">
+                    <h2>Welcome to the Space View!</h2>
+                    <p>Choose to search for Planets, Stars, or Nebula</p>
+                    <form class="js-search-options">
+                        <button>Search Planets</button>
+                        <button>Search Stars</button>
+                        <button>Search Nebula</button>
+                    </form>
+                    <!--Sample image maybe IMage of the day from Nasa-->
+                    <div class="imageContainer">
+                            <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image" alt="Sweet Picture of Saturn; will use info from API call">
+                    </div>       
+                </div>
+                
+            </section>
+            <!-- Planet page for search-->
+            <section role="region">
+                <div class="container col-12">
+                    <h2>Planet Page</h2>
+                    <!-- considering adding radio buttons?  there's a limited number of planets.-->
+                    <p>Which Planet do you want to View?</p>
+                    <form class='searchPlanet'>
+                        <div>
+                            <label for="planet">Search Planet</label>
+                            <input type="text" id="planet" name="planet" required>
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                    <p>Possible search options: Mercury, Venus, Neptune</p>  
+                </div>
+
+            </section>
+            <!-- Planet page for returning image-->
+            <section role="region">
+                <div class="container col-12">
+                    <h2>Planet Page</h2>
+                    <p>Choose to search for Planets, Stars, or Nebula</p>
+                    <form class="js-search-options">
+                        <button>Search Planets</button>
+                        <button>Search Stars</button>
+                        <button>Search Nebula</button>
+                    </form>
+                    <div class="imageContainer">
+                        <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image" alt="Sweet Picture of Saturn; will use info from API call">
+                    </div> 
+                    <div class="pictureInformation">
+                        <ul>Title: Cassini orbiting Saturn (Illustration)</ul>
+                        <ul>This illustration shows NASA's Cassini spacecraft in orbit around Saturn.  Cassini made 22 orbits that swooped between the rings 
+                            and the planet before ending its mission on Sept. 15, 2017, with a final plunge into Saturn.</ul>
+                        <a href="https://photojournal.jpl.nasa.gov/catalog/PIA22766" class="linkStyleInfo">Link to image on Nasa website</a>
+                
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error Page-->
+            <section role="region">
+                <div class="container col-12">
+                    <h2>Your Image was not Found!</h2>
+                    <p>Choose to search for Planets, Stars, or Nebula</p>
+                    <form class="js-search-options">
+                            <button>Search Planets</button>
+                            <button>Search Stars</button>
+                            <button>Search Nebula</button>
+                    </form>
+                    <p>Or ...Please try again!</p>
+                    <p>Which Planet do you want to View?</p>
+                    <form class='searchPlanet'>
+                        <div>
+                            <label for="planet">Search Planet</label>
+                            <!--Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+                            <input type="text" id="planet" name="planet"> 
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                    <p>Possible search options: Mercury, Venus, Neptune</p>
+
+                </div>
+
+            </section>
+
+            <!-- Star Search Page-->
+            <section role="region">
+                <div class="container col-12">
+                    <h2>Star Page</h2>
+                    <!-- considering adding radio buttons?  there's a limited number of planets.-->
+                    <p>Which Stars do you want to View?</p>
+                    <form class='searchPlanet'>
+                        <div>
+                            <label for="planet">Search Star</label>
+                            <input type="text" id="star" name="Star" required>
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                    <p>Possible search options: Sirius, Betelgeuse, Vega</p>  
+                </div>
+
+            </section>
+
+            <!-- Star Return Image page-->
+            <section role="region">
+
+            </section>
+            <!-- Nebula Search page-->
+            <section role="region">
+
+            </section>
+            <!-- Nebula Return Image page-->
+            <section role="region">
+
+            </section>
+
+        </main>
+        <footer role="contentinfo">
+            <p>Powered by Nasa</p>
+        </footer>
+        <script src="index.js"></script>   
+    </body>
+</html>

@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: lightgray;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 2%; /* may take this out with other styling */
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    
+}
+
+.responsive-image { 
+    max-width: 100%;
+    height: auto;
+}
+
+.imageContainer {
+    padding:20px;
+}
+
+.pictureInformation {
+    padding-left: 20%;
+    padding-right: 20%;
+
+}
+
+footer {
+    text-align: center;
+}
+
+
+
+  

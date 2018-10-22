@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Grid measurements:
+ *
+ *   960px wide including 12 gutters (half gutters on both edges)
+ *
+ *   60px columns (12)
+ *   20px gutters (two half-gutters + 11 full gutters, so 12 total)
+ *
+ *
+ *   For smaller screens, we always want 20px of padding on either side,
+ *   so 960 + 20 + 20 => 1000px
+ *
+ */
+
+
+
+ /*.row {
+    max-width: 1000px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+  } */
+  
+  /* Clearfix 
+  .row::before,
+  .row::after {
+    display: table;
+    content: '';
+  } 
+  
+  .row::after {
+    clear: both;
+  } */
+  
+  /* Sarah note: take out .col-3, col-4, col-6 if I don't need them*/
+  .col-3, .col-4, .col-6, .col-12 {
+    float: left;
+  
+    /* Gutters:
+     * Each column is padded by half-a-gutter on each side,
+     *
+     * Half a gutter is 10px, 10/960 (context) = 1.041666%
+     *
+     */
+    padding-left: 1.04166666%;
+    padding-right: 1.04166666%;
+  }
+  
+  /* Mobile defaults */
+  .col-3, .col-4, .col-6, .col-12 {
+    width: 100%;
+  }
+  
+  
+  /* Non-mobile, grid */
+  @media only screen and (min-width: 640px) {
+    /* 3 columns, 3/12 in % */
+    .col-3 {
+      width: 25%;
+    }
+  
+    /* 4 columns, 4/12 in % */
+    .col-4 {
+      width: 33.33%;
+    }
+  
+    /* 6 columns 6/12 in % */
+    .col-6 {
+      width: 50%;
+    }
+  
+    /* 12 columns, 12/12 */
+    .col-12 {
+      width: 100%;
+    }
+  }
+
+  /* Smartphones (portrait and landscape) ----------- */
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+
+    h1 {
+        text-align: center;
+        padding: 10%;
+        padding-bottom: 0;
+    }
+
+    .pictureInformation {
+        padding-left: 5%;
+        text-align: left;
+        padding-right: 5%;
+    }
+
+    .linkStyleInfo {
+        padding: 15%;
+        text-align: center;
+    }
+
+ }
+
+     
+/* Smartphones (landscape) ----------- */
+/* @media only screen and (min-width : 321px) {
+/* Styles */
+/* }
+
+/* Smartphones (portrait) ----------- */
+/* @media only screen and (max-width : 320px) {
+/* Styles */
+/* 
+}/* iPads (portrait and landscape) ----------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+/* }
+
+/* iPads (landscape) ----------- */
+/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+/* Styles */
+/* }
+
+/* iPads (portrait) ----------- 
+ @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+ Styles 
+
+
+
+
