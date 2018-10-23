@@ -62,13 +62,15 @@
                         <img src="https://images-assets.nasa.gov/image/PIA02210/PIA02210~thumb.jpg" class="responsive-image" alt="Sweet Picture of Saturn; will use info from API call">
                     </div> 
                     <div class="pictureInformation">
-                        <ul>Neptune</ul>
-                        <ul>This contrast enhanced color picture of Neptune was acquired by NASA Voyager 2 on Aug. 14, 1989. 
-                            As Voyager 2 approached Neptune, rapidly increasing image resolution is revealed striking new 
-                            details. Bright, wispy clouds are seen overlying the Great Dar</ul>
-                        <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA02210" class="linkStyleInfo">Link to image on Nasa website</a>
-                
+                        <ul>
+                            <li>Neptune</li>
+
+                            <li>This contrast enhanced color picture of Neptune was acquired by NASA Voyager 2 on Aug. 14, 1989. 
+                                As Voyager 2 approached Neptune, rapidly increasing image resolution is revealed striking new 
+                                details. Bright, wispy clouds are seen overlying the Great Dar</li>    
+                        </ul>
                     </div>
+                    <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=PIA02210" class="linkStyleInfo">Link to image on Nasa website</a>
                 </section>
             </div>
 
@@ -85,11 +87,11 @@
                     </div>
                     <p>Or ...Please try again!</p>
                     <p>Which Planet do you want to View?</p>
-                    <form class='searchPlanet'>
+                    <form class='searchForm'>
                         <div>
-                            <label for="planet">Search Planet</label>
+                            <label for="new-search-planet">Search Planet</label>
                             <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-                            <input type="text" id="planet" name="planet" required> 
+                            <input type="text" id="new-search-planet" name="new-search-planet" required> 
                             <button type="submit">Search</button>
                         </div>
                     </form>
