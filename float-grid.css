@@ -35,7 +35,6 @@
     clear: both;
   } */
   
-  /* Sarah note: take out .col-3, col-4, col-6 if I don't need them*/
   .col-3, .col-4, .col-6, .col-12 {
     float: left;
   
