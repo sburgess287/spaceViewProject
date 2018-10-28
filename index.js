@@ -22,7 +22,7 @@ function getDataFromApi(query, callback) {
     media_type : 'image',
   //  keywords : 'planet',
    // title : query,
-    q : query,
+    q : query
 
   };
  // Use .ajax method to retrieve data from the Nasa API
@@ -84,7 +84,7 @@ function displayNasaSearchData(data) {
   $('.contentContainer').empty();
   for (let i = 0; i < data.collection.items.length; i++) {
    // $('.contentContainer').html(renderResult);
-   $('.contentContainer').append(
+   $('.contentContainer').html(
      `
         <!-- Planet page for returning image-->
       <div class="planet-image-page">
@@ -97,16 +97,16 @@ function displayNasaSearchData(data) {
                   <button class="nebulae-btn" type="button">Search Nebulas</button>
               </div>
               <div class="imageContainer">
-              <img src="${data.collection.items[i].links[i].href}" class="responsive-image" alt="${data.collection.items[i].data[i].description}">
+              <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data.description}">
               </div> 
               <div class="pictureInformation">
                   
-                  <h3>${data.collection.items[i].data[i].title}</h3>
+                  <h3>${data.collection.items[i].data.title}</h3>
 
-                  <p>${data.collection.items[i].data[i].description}</p>    
+                  <p>${data.collection.items[i].data.description}</p>    
                           
                 
-                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[i].nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
+                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
               </div>
           </section>
       </div>
