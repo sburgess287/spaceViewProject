@@ -21,10 +21,11 @@ function getDataFromApi(query, callback) {
   const params = {
     media_type : 'image',
   //  keywords : 'planet',
+   // title : query,
     q : query,
 
   };
- // $.getJSON(nasaSearchUrl, params, callback);
+ // Use .ajax method to retrieve data from the Nasa API
   $.ajax(
     {
       url : nasaSearchUrl,
@@ -34,21 +35,87 @@ function getDataFromApi(query, callback) {
         api_key : apiKey,
       },
       success : callback,
-    }
+    }, 
   ) 
 
+  // error handling
+
+
 }
+// remember to add error handling if no results found  (where?)
+// remember to add loading text while results are returned
 // placeholder? Specify for Planet results page? 
-function renderResult(results) {
-  return`
-  <!-- Planet page for returning image-->
-  `
-}
+// function renderResult(data) {
+//   console.log('renderResult ran and showing json data a second time just after this log');
+//   console.log(data);
+//   return `
+//   <!-- Planet page for returning image-->
+//   <div class="planet-image-page">
+//       <section role="region" class="container col-12">
+//           <h2>Planet Page</h2>
+//           <p>Choose to search for Planets, Stars, or Nebula</p>
+//           <div class="search-options">
+//               <button class="planets-btn" type="button">Search Planets</button>
+//               <button class="stars-btn" type="button">Search Stars</button>
+//               <button class="nebulae-btn" type="button">Search Nebulas</button>
+//           </div>
+//           <div class="imageContainer">
+//               <img src="${data.collection.items.links.href}" class="responsive-image" alt="${data.collection.items.description}">
+//           </div> 
+//           <div class="pictureInformation">
+              
+//               <h3>${data.collection.items.title}</h3>
+
+//               <p>${data.collection.items.description}</p>    
+                      
+             
+//               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${collection.items.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
+//           </div>
+//       </section>
+//   </div>
+//   `
+// }
 
 function displayNasaSearchData(data) {
-  console.log('display results ran');
+  console.log('.ajax has returned results, and displayNasaSearchData ran');
   console.log(data);
+  console.log(data.collection.items.length);
+
   $('.contentContainer').empty();
+  for (let i = 0; i < data.collection.items.length; i++) {
+   // $('.contentContainer').html(renderResult);
+   $('.contentContainer').append(
+     `
+        <!-- Planet page for returning image-->
+      <div class="planet-image-page">
+          <section role="region" class="container col-12">
+              <h2>Planet Page</h2>
+              <p>Choose to search for Planets, Stars, or Nebula</p>
+              <div class="search-options">
+                  <button class="planets-btn" type="button">Search Planets</button>
+                  <button class="stars-btn" type="button">Search Stars</button>
+                  <button class="nebulae-btn" type="button">Search Nebulas</button>
+              </div>
+              <div class="imageContainer">
+              <img src="${data.collection.items[i].links[i].href}" class="responsive-image" alt="${data.collection.items[i].data[i].description}">
+              </div> 
+              <div class="pictureInformation">
+                  
+                  <h3>${data.collection.items[i].data[i].title}</h3>
+
+                  <p>${data.collection.items[i].data[i].description}</p>    
+                          
+                
+                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[i].nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
+              </div>
+          </section>
+      </div>
+  
+     `
+
+   )
+  };
+ 
 
 }
 
