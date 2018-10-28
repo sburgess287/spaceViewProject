@@ -1,6 +1,5 @@
 'use strict';
 
-
 const nasaSearchUrl = "https://cors-anywhere.herokuapp.com/https://images-api.nasa.gov/search";
 const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 
@@ -36,6 +35,7 @@ function getDataFromApi(query, callback) {
       },
       success : callback,
     }, 
+    
   ) 
 
   // error handling
@@ -48,6 +48,7 @@ function getDataFromApi(query, callback) {
 // function renderResult(data) {
 //   console.log('renderResult ran and showing json data a second time just after this log');
 //   console.log(data);
+ 
 //   return `
 //   <!-- Planet page for returning image-->
 //   <div class="planet-image-page">
@@ -60,13 +61,13 @@ function getDataFromApi(query, callback) {
 //               <button class="nebulae-btn" type="button">Search Nebulas</button>
 //           </div>
 //           <div class="imageContainer">
-//               <img src="${data.collection.items.links.href}" class="responsive-image" alt="${data.collection.items.description}">
+//               <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
 //           </div> 
 //           <div class="pictureInformation">
               
-//               <h3>${data.collection.items.title}</h3>
+//               <h3>${data.collection.items[i].data[0].title}</h3>
 
-//               <p>${data.collection.items.description}</p>    
+//               <p>${data.collection.items[i].data[0].description}</p>    
                       
              
 //               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${collection.items.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
@@ -80,44 +81,58 @@ function displayNasaSearchData(data) {
   console.log('.ajax has returned results, and displayNasaSearchData ran');
   console.log(data);
   console.log(data.collection.items.length);
-
-  $('.contentContainer').empty();
-  for (let i = 0; i < data.collection.items.length; i++) {
-   // $('.contentContainer').html(renderResult);
-   $('.contentContainer').html(
-     `
-        <!-- Planet page for returning image-->
-      <div class="planet-image-page">
-          <section role="region" class="container col-12">
-              <h2>Planet Page</h2>
-              <p>Choose to search for Planets, Stars, or Nebula</p>
-              <div class="search-options">
-                  <button class="planets-btn" type="button">Search Planets</button>
-                  <button class="stars-btn" type="button">Search Stars</button>
-                  <button class="nebulae-btn" type="button">Search Nebulas</button>
-              </div>
-              <div class="imageContainer">
-              <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-              </div> 
-              <div class="pictureInformation">
-                  
-                  <h3>${data.collection.items[i].data[0].title}</h3>
-
-                  <p>${data.collection.items[i].data[0].description}</p>    
-                          
-                
-                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
-              </div>
-          </section>
-      </div>
   
-     `
+  $('.contentContainer').empty();
 
-   )
+  // for (let i = 0; i < data.collection.items.length; i++) {
+  //   console.log(data.collection.items[i].data[0].title);
+  // move loop into else statement
+    
+
+    if (data.collection.items.length === 0) {
+      $('.contentContainer').html(
+        `<-- Error page -->`
+      )
+    } else {
+      $('.contentContainer').html(
+        `<-- Planet Page -->`
+      )
+      //$('.contentContainer').html(renderResult);
+      //  $('.contentContainer').html(
+      //    `
+      //       <!-- Planet page for returning image-->
+      //     <div class="planet-image-page">
+      //         <section role="region" class="container col-12">
+      //             <h2>Planet Page</h2>
+      //             <p>Choose to search for Planets, Stars, or Nebula</p>
+      //             <div class="search-options">
+      //                 <button class="planets-btn" type="button">Search Planets</button>
+      //                 <button class="stars-btn" type="button">Search Stars</button>
+      //                 <button class="nebulae-btn" type="button">Search Nebulas</button>
+      //             </div>
+      //             <div class="imageContainer">
+      //             <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+      //             </div> 
+      //             <div class="pictureInformation">
+                      
+      //                 <h3>${data.collection.items[i].data[0].title}</h3>
+    
+      //                 <p>${data.collection.items[i].data[0].description}</p>    
+                              
+                    
+      //                 <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
+      //             </div>
+      //         </section>
+      //     </div>
+      
+      //    `
+    
+      // )
+    }
   };
  
 
-}
+//}
 
 
 // this function runs on click of the Nebulas button
