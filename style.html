@@ -71,7 +71,7 @@
                 </section>
             </div>
 
-            <!-- Error Page-->
+            <!-- Error Page Planet-->
             <div class="error-page">
                 <section role="region" class="container col-12">
                     <h2>Your Image was not Found!</h2>
@@ -96,6 +96,58 @@
 
                 </section>
 
+            </div>
+            <!-- Error Page Star-->
+            <div class="error-page">
+                <section role="region" class="container col-12">
+                    <h2>Your Image was not Found!</h2>
+                    <p>Choose to search for Planets, Stars, or Nebula</p>
+                    <!-- update this to take out form;  bad to have 2 forms on 1-->
+                    <div class="search-options">
+                        <button class="planets-btn" type="button">Search Planets</button>
+                        <button class="stars-btn" type="button">Search Stars</button>
+                        <button class="nebulae-btn" type="button">Search Nebulas</button>
+                    </div>
+                    <p>Or ...Please try again!</p>
+                    <p>Which Star do you want to View?</p>
+                    <form class='searchForm'>
+                        <div>
+                            <label for="new-search-star">Search Stars</label>
+                            <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+                            <input type="text" id="star-input" name="Star" required> 
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                    <p>Possible search options: Sirius, Betelgeuse, Vega</p>
+
+                </section>
+    
+            </div>
+            <!-- Error Page Nebula-->
+            <div class="error-page">
+                <section role="region" class="container col-12">
+                    <h2>Your Image was not Found!</h2>
+                    <p>Choose to search for Planets, Stars, or Nebula</p>
+                    <!-- update this to take out form;  bad to have 2 forms on 1-->
+                    <div class="search-options">
+                        <button class="planets-btn" type="button">Search Planets</button>
+                        <button class="stars-btn" type="button">Search Stars</button>
+                        <button class="nebulae-btn" type="button">Search Nebulas</button>
+                    </div>
+                    <p>Or ...Please try again!</p>
+                    <p>Which Nebula do you want to View?</p>
+                    <form class='searchForm'>
+                        <div>
+                            <label for="new-search-nebula">Search Nebulae</label>
+                            <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+                            <input type="text" id="nebula-input" name="Nebula" required> 
+                            <button type="submit">Search</button>
+                        </div>
+                    </form>
+                    <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
+
+                </section>
+    
             </div>
 
             <!-- Star Search Page-->
@@ -149,7 +201,7 @@
                     <form class='search-nebulae-form'>
                         <div>
                             <label for="nebula">Search Nebulae</label>
-                            <input type="text" id="nebula" name="Nebula" required>
+                            <input type="text" id="nebula-input" name="Nebula" required>
                             <button type="submit">Search</button>
                         </div>
                     </form>

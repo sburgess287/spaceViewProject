@@ -10,7 +10,7 @@ function getDataFromApi(query, callback) {
   const params = {
     media_type : 'image',
     //q : 'planet',
-    title : query,
+    //title : query,
   // year_start : '2017',
     q : query
 
@@ -28,11 +28,36 @@ function getDataFromApi(query, callback) {
     }, 
       // error handling here in case api is down?
   ) 
-
-  
-
 }
 
+// // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
+// function getStarDataFromApi(query, callback) {
+//   console.log('getStarDataFromApi ran');
+//   console.log(query);
+//   const params = {
+//     media_type : 'image',
+//     q : 'star',
+//   //  title : query,
+//   // year_start : '2017',
+//     q : query
+
+//   };
+//  // Use .ajax method to retrieve data from the Nasa API
+//   $.ajax(
+//     {
+//       url : nasaSearchUrl,
+//       data : params, 
+//       method : 'GET',
+//       headers : {
+//         api_key : apiKey,
+//       },
+//       success : callback,
+//     }, 
+//       // error handling here in case api is down?
+//   ) 
+// }
+
+// Trying to break this into separate function but the data was showing 0/undefined
 // remember to add loading text while results are returned
 // placeholder? Specify for Planet results page? 
 // function generatePlanetsFoundPageString(data) {
@@ -70,37 +95,100 @@ function getDataFromApi(query, callback) {
 
 // add click handlers for buttons at top and search button
 function generateNoPlanetsFoundPageString(){
-  return `
+  return`
   <!-- Error Page-->
     <div class="error-page">
-        <section role="region" class="container col-12">
-            <h2>Your Image was not Found!</h2>
-            <p>Choose to search for Planets, Stars, or Nebula</p>
-            <!-- update this to take out form;  bad to have 2 forms on 1-->
-            <div class="search-options">
-                <button class="planets-btn" type="button">Search Planets</button>
-                <button class="stars-btn" type="button">Search Stars</button>
-                <button class="nebulae-btn" type="button">Search Nebulas</button>
-            </div>
-            <p>Or ...Please try again!</p>
-            <p>Which Planet do you want to View?</p>
-            <form class='searchForm'>
-                <div>
-                    <label for="new-search-planet">Search Planet</label>
-                    <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-                    <input type="text" id="new-search-planet" name="new-search-planet" required> 
-                    <button type="submit">Search</button>
-                </div>
-            </form>
-            <p>Possible search options: Mercury, Venus, Neptune</p>
+      <section role="region" class="container col-12">
+        <h2>Your Image was not Found!</h2>
+        <p>Choose to search for Planets, Stars, or Nebula</p>
+        <!-- update this to take out form;  bad to have 2 forms on 1-->
+        <div class="search-options">
+          <button class="planets-btn" type="button">Search Planets</button>
+          <button class="stars-btn" type="button">Search Stars</button>
+          <button class="nebulae-btn" type="button">Search Nebulas</button>
+        </div>
+        <p>Or ...Please try again!</p>
+        <p>Which Planet do you want to View?</p>
+        <form class='search-planet-form'>
+          <div>
+            <label for="planet">Search Planet</label>
+            <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+            <input type="text" id="planet-input" name="planet" required> 
+            <button type="submit">Search</button>
+          </div>
+        </form>
+        <p>Possible search options: Mercury, Venus, Neptune</p>
 
-        </section>
+      </section>
 
     </div>
   `
 }
 
+function generateNoStarsFoundPageString(){
+  return`
+  <!-- Error Page Star-->
+    <div class="error-page">
+      <section role="region" class="container col-12">
+        <h2>Your Image was not Found!</h2>
+        <p>Choose to search for Planets, Stars, or Nebula</p>
+        <!-- update this to take out form;  bad to have 2 forms on 1-->
+        <div class="search-options">
+            <button class="planets-btn" type="button">Search Planets</button>
+            <button class="stars-btn" type="button">Search Stars</button>
+            <button class="nebulae-btn" type="button">Search Nebulas</button>
+        </div>
+        <p>Or ...Please try again!</p>
+        <p>Which Star do you want to View?</p>
+        <form class='search-star-form'>
+            <div>
+                <label for="new-search-star">Search Stars</label>
+                <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+                <input type="text" id="star-input" name="Star" required> 
+                <button type="submit">Search</button>
+            </div>
+        </form>
+        <p>Possible search options: Sirius, Betelgeuse, Vega</p>
 
+      </section>
+
+    </div>
+  `
+}
+
+function generateNoNebulassFoundPageString(){
+  return`
+  <!-- Error Page Nebula-->
+  <div class="error-page">
+    <section role="region" class="container col-12">
+      <h2>Your Image was not Found!</h2>
+      <p>Choose to search for Planets, Stars, or Nebula</p>
+      <!-- update this to take out form;  bad to have 2 forms on 1-->
+      <div class="search-options">
+          <button class="planets-btn" type="button">Search Planets</button>
+          <button class="stars-btn" type="button">Search Stars</button>
+          <button class="nebulae-btn" type="button">Search Nebulas</button>
+      </div>
+      <p>Or ...Please try again!</p>
+      <p>Which Nebula do you want to View?</p>
+      <form class='search-nebula-form'>
+          <div>
+              <label for="new-search-nebula">Search Nebulae</label>
+              <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+              <input type="text" id="nebula-input" name="Nebula" required> 
+              <button type="submit">Search</button>
+          </div>
+      </form>
+      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
+
+    </section>
+
+  </div>
+
+  `
+}
+
+// This returns the form for Planet Search (1st one built)
 function displayNasaSearchData(data) {
   console.log('.ajax has returned json, and displayNasaSearchData ran');
   console.log(data);
@@ -146,7 +234,48 @@ function displayNasaSearchData(data) {
     }
   };
 
+function displayStarSearchData(data){
+  console.log('.ajax has returned json and displayStarSearchData ran');
+  console.log(data);
+  console.log(data.collection.items.length);
+  $('.contentContainer').empty();
+    // handle no elements returned
+    if (data.collection.items.length === 0) {
+      const noStarsFoundPage = generateNoStarsFoundPageString();
+      $('.contentContainer').html(noStarsFoundPage);
+    } else {
+      for (let i = 0; i < 5; i++) {
+        $('.contentContainer').html(
+          `
+          <!-- Star page for returning image -->
+          <h2>Finish displayNasaSearchData then go from there</h2>
+          `
+        )
+      }
+    }
+}
 
+function displayNebulaSearchData(data){
+  console.log('.ajax has returned json and displayNebulaSearchData ran');
+  console.log(data);
+  console.log(data.collection.items.length);
+  $('.contentContainer').empty();
+    // handle no elements returned
+    if (data.collection.items.length === 0) {
+      const noStarsFoundPage = generateNoNebulassFoundPageString();
+      $('.contentContainer').html(noStarsFoundPage);
+    } else {
+      for (let i = 0; i < 5; i++) {
+        $('.contentContainer').html(
+          `
+          <!-- Nebula page for returning image -->
+          <h2>Finish displayNasaSearchData then go from there</h2>
+          `
+        )
+      }
+    }
+  
+}
 function generateStarSearchPageString(){
   return`
   <div class="star-search-page">
@@ -157,13 +286,12 @@ function generateStarSearchPageString(){
       <form class='search-star-form'>
         <div>
           <label for="star">Search Star</label>
-          <input type="text" id="star" name="Star" required>
+          <input type="text" id="star-input" name="Star" required>
           <button type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Sirius, Betelgeuse, Vega</p>  
     </section>
-
   </div>
   `
 }
@@ -177,8 +305,8 @@ function generateNebulaSearchPageString(){
       <p>Which Nebulas do you want to View?</p>
       <form class='search-nebulae-form'>
         <div>
-          <label for="nebula">Search Nebulae</label>
-          <input type="text" id="nebula" name="Nebula" required>
+          <label for="new-search-nebula">Search Nebulae</label>
+          <input type="text" id="nebula-input" name="Nebula" required>
           <button type="submit">Search</button>
         </div>
       </form>
@@ -200,26 +328,24 @@ function showStarSearchPage() {
   console.log('showStarSearchPage ran');
   const starPage = generateStarSearchPageString();
   $('.contentContainer').html(starPage);
-
 }
 
 function generatePlanetSearchPageString(){
   return`
   <!-- Planet page for search-->
   <div class="planet-search-page">
-      <section role="region" class="container col-12">
-          <h2>Planet Page</h2>
-          <p>Which Planet do you want to View?</p>
-          <form class='search-planet-form'>
-              <div>
-                  <label for="planet">Search Planet</label>
-                  <input type="text" id="planet-input" name="planet" required>
-                  <button type="submit">Search</button>
-              </div>
-          </form>
-          <p>Possible search options: Mercury, Venus, Neptune</p>  
-      </section>
-
+    <section role="region" class="container col-12">
+      <h2>Planet Page</h2>
+      <p>Which Planet do you want to View?</p>
+      <form class='search-planet-form'>
+        <div>
+          <label for="planet">Search Planet</label>
+          <input type="text" id="planet-input" name="planet" required>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <p>Possible search options: Mercury, Venus, Neptune</p>  
+  </section>
   </div>
   `
 }
@@ -267,46 +393,39 @@ function handleForm() {
   // Show welcome page
   showWelcomePage();
 
-  // 1 function? currently wrote 3 with an event listener on each button
-  // On click of planets button, load the search planet page
-  // On click of stars button, load the stars page
-  // On click of the Nebulas button, load the nebulas page
+// Listen for the form submit on '.search-planet-form'
+// Pass the value of the form to nasa api query
+$('.contentContainer').on('submit', '.search-planet-form', event => {
+// $('.search-planet-form').submit(event => {
+  event.preventDefault();
+  const query = $('#planet-input').val();
+  console.log(query);
+  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
+  getDataFromApi(query, displayNasaSearchData);
+})
 
-  // Listen for button clicks using event delegation because they're dynamically loading too
+// Listen for the form submit on '.search-star-form'
+// Pass the value of the form to nasa api query
+$('.contentContainer').on('submit', '.search-star-form', event => {
+  event.preventDefault();
+  const query = $('#star-input').val();
+  console.log(query);
+  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
+  getDataFromApi(query, displayStarSearchData);
+})
 
-  // $('.planets-btn').click(function() {
-  //   console.log('planets button clicked');
-  //   showPlanetsSearchPage();
-  // });
+// Listen for the form submit on '.search-nebulae-form'
+// Pass the value of the form to nasa api query
+$('.contentContainer').on('submit', '.search-nebulae-form', event => {
+  event.preventDefault();
+  const query = $('#nebula-input').val();
+  console.log(query);
+  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
+  getDataFromApi(query, displayNebulaSearchData);
+})
 
-  // $('.stars-btn').click(function() {
-  //   console.log('stars button clicked');
-  //   showStarSearchPage();
-  // })
-  
-  // $('.nebulae-btn').click(function() {
-  //   console.log('nebulae button clicked');
-  //   showNebulasSearchPage();
-  // })
-
-
-
-
-  // Listen for the form submit on each page
-  // Pass the value of the form to nasa api query
-  // Display results (included in function 1 line above?)
-  // event delegation 
-  $('.contentContainer').on('submit', '.search-planet-form', event => {
- // $('.search-planet-form').submit(event => {
-    event.preventDefault();
-    const query = $('#planet-input').val();
-    console.log(query);
-    //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
-    getDataFromApi(query, displayNasaSearchData);
-
-  })
-
-
+// Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
+// when dynamically loaded on different pages
   $('.contentContainer').on('click', '.planets-btn', event => {
     console.log('planets button clicked inside the event delegation function');
     showPlanetsSearchPage();
