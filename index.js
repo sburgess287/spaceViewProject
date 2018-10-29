@@ -9,8 +9,8 @@ function getDataFromApi(query, callback) {
   console.log(query);
   const params = {
     media_type : 'image',
-    q : 'planet',
-   // title : query,
+    //q : 'planet',
+    title : query,
   // year_start : '2017',
     q : query
 
@@ -146,18 +146,62 @@ function displayNasaSearchData(data) {
     }
   };
 
-// this function runs on click of the Nebulas button
+
+function generateStarSearchPageString(){
+  return`
+  <div class="star-search-page">
+    <section role="region" class="container col-12">
+      <h2>Star Page</h2>
+      <!-- considering adding radio buttons?  there's a limited number of planets.-->
+      <p>Which Stars do you want to View?</p>
+      <form class='search-star-form'>
+        <div>
+          <label for="star">Search Star</label>
+          <input type="text" id="star" name="Star" required>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <p>Possible search options: Sirius, Betelgeuse, Vega</p>  
+    </section>
+
+  </div>
+  `
+}
+
+function generateNebulaSearchPageString(){
+  return`
+  <!-- Nebula Search page-->
+  <div class="nebula-search-page">
+    <section role="region" class="container col-12">
+      <h2>Nebula Page</h2>
+      <p>Which Nebulas do you want to View?</p>
+      <form class='search-nebulae-form'>
+        <div>
+          <label for="nebula">Search Nebulae</label>
+          <input type="text" id="nebula" name="Nebula" required>
+          <button type="submit">Search</button>
+        </div>
+      </form>
+      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>  
+    </section>
+  </div>
+  `
+}
+
+// this function runs on click of the Search Nebulas button
 function showNebulasSearchPage() {
   console.log('showNebulasSearchPage ran');
-
+  const nebulaPage = generateNebulaSearchPageString();
+  $('.contentContainer').html(nebulaPage);
 }
 
-// this function runs on click fo the stars button
+// this function runs on click of the Search Stars button
 function showStarSearchPage() {
   console.log('showStarSearchPage ran');
+  const starPage = generateStarSearchPageString();
+  $('.contentContainer').html(starPage);
 
 }
-
 
 function generatePlanetSearchPageString(){
   return`
