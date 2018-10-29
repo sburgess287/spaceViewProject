@@ -63,42 +63,6 @@ function getStarDataFromApi(query, keyword, callback) {
   ) 
 }
 
-// Trying to break this into separate function but the data was showing 0/undefined
-// remember to add loading text while results are returned
-// placeholder? Specify for Planet results page? 
-// function generatePlanetsFoundPageString(data) {
-//   console.log('renderResult ran and showing json data a second time just after this log');
-//   console.log(data);
- 
-//   return `
-//   <!-- Planet page for returning image-->
-//   <div class="planet-image-page">
-//       <section role="region" class="container col-12">
-//           <h2>Planet Page</h2>
-//           <p>Choose to search for Planets, Stars, or Nebula</p>
-//           <div class="search-options">
-//               <button class="planets-btn" type="button">Search Planets</button>
-//               <button class="stars-btn" type="button">Search Stars</button>
-//               <button class="nebulae-btn" type="button">Search Nebulas</button>
-//           </div>
-//           <div class="imageContainer">
-             
-//               <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-//           </div> 
-//           <div class="pictureInformation">
-              
-//               <h3>${data.collection.items[i].data[0].title}</h3>
-
-//               <p>${data.collection.items[i].data[0].description}</p>    
-                      
-             
-//               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${collection.items.nasa_id}" class="linkStyleInfo">Link to image on Nasa website</a>
-//           </div>
-//       </section>
-//   </div>
-//   `
-// }
-
 // add click handlers for buttons at top and search button
 function generateNoPlanetsFoundPageString(){
   return`
