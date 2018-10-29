@@ -213,18 +213,18 @@ function displayNasaSearchData(data) {
               <h2>Planet Page</h2>
               <p>Choose to search for Planets, Stars, or Nebula</p>
               <div class="search-options">
-                  <button class="planets-btn" type="button">Search Planets</button>
-                  <button class="stars-btn" type="button">Search Stars</button>
-                  <button class="nebulae-btn" type="button">Search Nebulas</button>
+                <button class="planets-btn" type="button">Search Planets</button>
+                <button class="stars-btn" type="button">Search Stars</button>
+                <button class="nebulae-btn" type="button">Search Nebulas</button>
               </div>  
               <div class=".js-search-results">
                 <div class="imageContainer">
                   <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
                 </div> 
                 <div class="pictureInformation">
-                    <h3>${data.collection.items[i].data[0].title}</h3>
-                    <p>${data.collection.items[i].data[0].description}</p>            
-                    <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+                  <h3>${data.collection.items[i].data[0].title}</h3>
+                  <p>${data.collection.items[i].data[0].description}</p>            
+                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
                 </div>
               <div>
             </section>
@@ -400,7 +400,6 @@ $('.contentContainer').on('submit', '.search-planet-form', event => {
   event.preventDefault();
   const query = $('#planet-input').val();
   console.log(query);
-  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
   getDataFromApi(query, displayNasaSearchData);
 })
 
@@ -410,7 +409,6 @@ $('.contentContainer').on('submit', '.search-star-form', event => {
   event.preventDefault();
   const query = $('#star-input').val();
   console.log(query);
-  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
   getDataFromApi(query, displayStarSearchData);
 })
 
@@ -420,7 +418,6 @@ $('.contentContainer').on('submit', '.search-nebulae-form', event => {
   event.preventDefault();
   const query = $('#nebula-input').val();
   console.log(query);
-  //queryTarget.val(""); // in case I want to clear the input, not sure if necessary?
   getDataFromApi(query, displayNebulaSearchData);
 })
 
