@@ -12,7 +12,40 @@ function getDataFromApi(query, callback) {
     //q : 'planet',
     //title : query,
   // year_start : '2017',
-    q : query
+    q : query,
+    
+
+  };
+ // Use .ajax method to retrieve data from the Nasa API
+  $.ajax(
+    {
+      url : nasaSearchUrl,
+      data : params, 
+      method : 'GET',
+      headers : {
+        api_key : apiKey,
+      },
+      success : callback,
+      error : function (a,b,c){
+        console.log("whateverI want",c);
+      }
+    }, 
+      
+  ) 
+}
+
+// https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
+function getStarDataFromApi(query, keyword, callback) {
+  console.log('getStarDataFromApi ran');
+  console.log(query);
+  const params = {
+    media_type : 'image',
+    //q : 'star',
+  //  title : query,
+  // year_start : '2017',
+    q : query,
+    keywords: keyword
+
 
   };
  // Use .ajax method to retrieve data from the Nasa API
@@ -29,33 +62,6 @@ function getDataFromApi(query, callback) {
       // error handling here in case api is down?
   ) 
 }
-
-// // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
-// function getStarDataFromApi(query, callback) {
-//   console.log('getStarDataFromApi ran');
-//   console.log(query);
-//   const params = {
-//     media_type : 'image',
-//     q : 'star',
-//   //  title : query,
-//   // year_start : '2017',
-//     q : query
-
-//   };
-//  // Use .ajax method to retrieve data from the Nasa API
-//   $.ajax(
-//     {
-//       url : nasaSearchUrl,
-//       data : params, 
-//       method : 'GET',
-//       headers : {
-//         api_key : apiKey,
-//       },
-//       success : callback,
-//     }, 
-//       // error handling here in case api is down?
-//   ) 
-// }
 
 // Trying to break this into separate function but the data was showing 0/undefined
 // remember to add loading text while results are returned
@@ -193,44 +199,49 @@ function displayNasaSearchData(data) {
   console.log('.ajax has returned json, and displayNasaSearchData ran');
   console.log(data);
   console.log(data.collection.items.length);
-  $('.contentContainer').empty();
+  //$('.contentContainer').empty();
     // handle no elements returned
     if (data.collection.items.length === 0) {
       const noPlanetsFoundPage = generateNoPlanetsFoundPageString();
       $('.contentContainer').html(noPlanetsFoundPage);
     } else {
-      for (let i = 0; i < 5; i++) {
+      const planetList = []
+      const numberOfResultsToShow = 5
+      for (let i = 0; i < numberOfResultsToShow; i++) {
+        planetList.push(
+          `<div class="imageContainer">
+          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+        </div> 
+        <div class="pictureInformation">
+          <h3>${data.collection.items[i].data[0].title}</h3>
+          <p>${data.collection.items[i].data[0].description}</p>            
+          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+        </div>`
+        )
       //for (let i = 0; i < data.collection.items.length; i++) {
       //   console.log(data.collection.items[i].data[0].title);
       // const planetsFoundPage = generatePlanetsFoundPageString(data);
       //  $('.contentContainer').html(planetsFoundPage);
       // use .map? .append?  trying to dynamically show a list while at the same time top part of the page is static
-        $('.contentContainer').html(
-          `
-          <!-- Planet page for returning image-->
-          <div class="planet-image-page">
-            <section role="region" class="container col-12">
-              <h2>Planet Page</h2>
-              <p>Choose to search for Planets, Stars, or Nebula</p>
-              <div class="search-options">
-                <button class="planets-btn" type="button">Search Planets</button>
-                <button class="stars-btn" type="button">Search Stars</button>
-                <button class="nebulae-btn" type="button">Search Nebulas</button>
-              </div>  
-              <div class=".js-search-results">
-                <div class="imageContainer">
-                  <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-                </div> 
-                <div class="pictureInformation">
-                  <h3>${data.collection.items[i].data[0].title}</h3>
-                  <p>${data.collection.items[i].data[0].description}</p>            
-                  <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-                </div>
-              <div>
-            </section>
-          </div>`   
-        )    
       }
+      $('.contentContainer').html(
+        `
+        <!-- Planet page for returning image-->
+        <div class="planet-image-page">
+          <section role="region" class="container col-12">
+            <h2>Planet Page</h2>
+            <p>Choose to search for Planets, Stars, or Nebula</p>
+            <div class="search-options">
+              <button class="planets-btn" type="button">Search Planets</button>
+              <button class="stars-btn" type="button">Search Stars</button>
+              <button class="nebulae-btn" type="button">Search Nebulas</button>
+            </div>  
+            <div class="js-search-results">
+             ${planetList.join('')}
+            <div>
+          </section>
+        </div>`   
+      )    
     }
   };
 
@@ -393,36 +404,36 @@ function handleForm() {
   // Show welcome page
   showWelcomePage();
 
-// Listen for the form submit on '.search-planet-form'
-// Pass the value of the form to nasa api query
-$('.contentContainer').on('submit', '.search-planet-form', event => {
-// $('.search-planet-form').submit(event => {
-  event.preventDefault();
-  const query = $('#planet-input').val();
-  console.log(query);
-  getDataFromApi(query, displayNasaSearchData);
-})
+  // Listen for the form submit on '.search-planet-form'
+  // Pass the value of the form to nasa api query
+  $('.contentContainer').on('submit', '.search-planet-form', event => {
+  // $('.search-planet-form').submit(event => {
+    event.preventDefault();
+    const query = $('#planet-input').val();
+    console.log(query);
+    getDataFromApi(query, displayNasaSearchData);
+  })
 
-// Listen for the form submit on '.search-star-form'
-// Pass the value of the form to nasa api query
-$('.contentContainer').on('submit', '.search-star-form', event => {
-  event.preventDefault();
-  const query = $('#star-input').val();
-  console.log(query);
-  getDataFromApi(query, displayStarSearchData);
-})
+  // Listen for the form submit on '.search-star-form'
+  // Pass the value of the form to nasa api query
+  $('.contentContainer').on('submit', '.search-star-form', event => {
+    event.preventDefault();
+    const query = $('#star-input').val();
+    console.log(query);
+    getDataFromApi(query, 'star', displayStarSearchData);
+  })
 
-// Listen for the form submit on '.search-nebulae-form'
-// Pass the value of the form to nasa api query
-$('.contentContainer').on('submit', '.search-nebulae-form', event => {
-  event.preventDefault();
-  const query = $('#nebula-input').val();
-  console.log(query);
-  getDataFromApi(query, displayNebulaSearchData);
-})
+  // Listen for the form submit on '.search-nebulae-form'
+  // Pass the value of the form to nasa api query
+  $('.contentContainer').on('submit', '.search-nebulae-form', event => {
+    event.preventDefault();
+    const query = $('#nebula-input').val();
+    console.log(query);
+    getDataFromApi(query, 'nebulae', displayNebulaSearchData);
+  })
 
-// Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
-// when dynamically loaded on different pages
+  // Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
+  // when dynamically loaded on different pages
   $('.contentContainer').on('click', '.planets-btn', event => {
     console.log('planets button clicked inside the event delegation function');
     showPlanetsSearchPage();
