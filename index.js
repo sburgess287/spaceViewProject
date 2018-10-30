@@ -143,7 +143,7 @@ function generateNoNebulasFoundPageString(){
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Nebula do you want to View?</p>
-      <form class='search-nebula-form'>
+      <form class='search-nebulae-form'>
         <div>
           <label for="new-search-nebula">Search Nebulae</label>
           <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
