@@ -36,36 +36,7 @@ function getDataFromApi(query, description_508, callback) {
   ) 
 }
 
-// // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
-// function getStarDataFromApi(query, keyword, callback) {
-//   console.log('getStarDataFromApi ran');
-//   console.log(query);
-//   const params = {
-//     media_type : 'image',
-//     //q : 'star',
-//   //  title : query,
-//   // year_start : '2017',
-//     q : query,
-//     keywords: keyword
-
-
-//   };
-//  // Use .ajax method to retrieve data from the Nasa API
-//   $.ajax(
-//     {
-//       url : nasaSearchUrl,
-//       data : params, 
-//       method : 'GET',
-//       headers : {
-//         api_key : apiKey,
-//       },
-//       success : callback,
-//     }, 
-//       // error handling here in case api is down?
-//   ) 
-// }
-
-// add click handlers for buttons at top and search button
+// Creates the string for No results found page for Planet Search
 function generateNoPlanetsFoundPageString(){
   return`
   <!-- Error Page-->
@@ -89,7 +60,7 @@ function generateNoPlanetsFoundPageString(){
             <button type="submit">Search</button>
           </div>
         </form>
-        <p>Possible search options: Mercury, Venus, Neptune</p>
+        <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
 
       </section>
 
@@ -97,6 +68,7 @@ function generateNoPlanetsFoundPageString(){
   `
 }
 
+// Creates the string for No results found page for Star Search
 function generateNoStarsFoundPageString(){
   return`
   <!-- Error Page Star-->
@@ -120,7 +92,7 @@ function generateNoStarsFoundPageString(){
                 <button type="submit">Search</button>
             </div>
         </form>
-        <p>Possible search options: Sirius, Betelgeuse, Vega</p>
+        <p>Possible search options: Sirius, Betelgeuse, Vega, Star system</p>
 
       </section>
 
@@ -128,6 +100,7 @@ function generateNoStarsFoundPageString(){
   `
 }
 
+// Creates the string for No results found page for Nebula Search
 function generateNoNebulasFoundPageString(){
   return`
   <!-- Error Page Nebula-->
@@ -157,7 +130,7 @@ function generateNoNebulasFoundPageString(){
   `
 }
 
-// This returns the form for Planet Search (1st one built)
+// This function loads images and data for Planet Search from the Nasa API
 function displayNasaSearchData(data) {
   console.log('.ajax has returned json, and displayNasaSearchData ran');
   console.log(data);
@@ -220,6 +193,7 @@ function displayNasaSearchData(data) {
     }
   };
 
+// This function loads images and data for Star Search from the Nasa API
 function displayStarSearchData(data){
   console.log('.ajax has returned json and displayStarSearchData ran');
   console.log(data);
@@ -282,6 +256,7 @@ function displayStarSearchData(data){
     }
 }
 
+// This function loads images and data for Nebula Search from the Nasa API
 function displayNebulaSearchData(data){
   console.log('.ajax has returned json and displayNebulaSearchData ran');
   console.log(data);
@@ -346,6 +321,7 @@ function displayNebulaSearchData(data){
     } 
 }
 
+// Generates string for the Star search page
 function generateStarSearchPageString(){
   return`
   <div class="star-search-page">
@@ -366,6 +342,7 @@ function generateStarSearchPageString(){
   `
 }
 
+// Generates string for the Nebula search page
 function generateNebulaSearchPageString(){
   return`
   <!-- Nebula Search page-->
@@ -386,20 +363,21 @@ function generateNebulaSearchPageString(){
   `
 }
 
-// this function runs on click of the Search Nebulas button
+// Listens for Click of the Search Nebulas button, then loads the Nebula Search Page
 function showNebulasSearchPage() {
   console.log('showNebulasSearchPage ran');
   const nebulaPage = generateNebulaSearchPageString();
   $('.contentContainer').html(nebulaPage);
 }
 
-// this function runs on click of the Search Stars button
+// Listens for Click of the Search Stars button, then loads the Star Search Page
 function showStarSearchPage() {
   console.log('showStarSearchPage ran');
   const starPage = generateStarSearchPageString();
   $('.contentContainer').html(starPage);
 }
 
+// Generates string for the Planet search page
 function generatePlanetSearchPageString(){
   return`
   <!-- Planet page for search-->
@@ -421,8 +399,7 @@ function generatePlanetSearchPageString(){
 }
 
 
-// this function runs on click of the planet button
-// to load the content to Search the Planet page
+// Listens for Click of the Search Planet button, then loads the Planet Search Page
 function showPlanetsSearchPage() {
   console.log('showPlanetsSearchPage ran');
   const planetPage = generatePlanetSearchPageString();
