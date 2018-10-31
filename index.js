@@ -168,20 +168,38 @@ function displayNasaSearchData(data) {
       $('.contentContainer').html(noPlanetsFoundPage);
     } else {
       const planetList = []
+      const resultArrayLength = data.collection.items.length;
       const numberOfResultsToShow = 5
-      for (let i = 0; i <= numberOfResultsToShow; i++) {
-        planetList.push(
-          `<div class="imageContainer">
-          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-        </div> 
-        <div class="pictureInformation">
-          <h3>${data.collection.items[i].data[0].title}</h3>
-          <p>${data.collection.items[i].data[0].description}</p>            
-          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-        </div>`
-        )
+      // handle fewer objects than numberOfResultsTosShow
+      if(resultArrayLength < numberOfResultsToShow){
+        for (let i = 0; i < resultArrayLength; i++) {
+          planetList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+            </div> 
+            <div class="pictureInformation">
+              <h3>${data.collection.items[i].data[0].title}</h3>
+              <p>${data.collection.items[i].data[0].description}</p>            
+              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+            </div>`
+          )
+        } 
+    } else if (resultArrayLength >= numberOfResultsToShow) {
+        for (let i = 0; i <= numberOfResultsToShow; i++) {
+          planetList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+          </div> 
+          <div class="pictureInformation">
+            <h3>${data.collection.items[i].data[0].title}</h3>
+            <p>${data.collection.items[i].data[0].description}</p>            
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+          </div>`
+          )
+        } 
       }
-      $('.contentContainer').html(
+
+    $('.contentContainer').html(
         `
         <!-- Planet page for returning image-->
         <div class="planet-image-page">
@@ -206,24 +224,42 @@ function displayStarSearchData(data){
   console.log('.ajax has returned json and displayStarSearchData ran');
   console.log(data);
   console.log(data.collection.items.length);
-    // handle no elements returned
+    // handle no elements returned after query
     if (data.collection.items.length === 0) {
       const noStarsFoundPage = generateNoStarsFoundPageString();
       $('.contentContainer').html(noStarsFoundPage);
     } else {
       const starList = []
-      const numberOfStarResultsToShow = 2
-      for (let i = 0; i < numberOfStarResultsToShow; i++) {
-        starList.push(
-          `<div class="imageContainer">
-          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-          </div> 
-          <div class="pictureInformation">
-            <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
-            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-          </div>`
-        )
+      const resultArrayLength = data.collection.items.length;
+      const numberOfStarResultsToShow = 5;
+      // handle fewer objects returned than numberOfStarResultsToShow
+      if (resultArrayLength < numberOfStarResultsToShow) {
+        for (let i = 0; i < resultArrayLength; i++) {
+          starList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+            </div> 
+            <div class="pictureInformation">
+              <h3>${data.collection.items[i].data[0].title}</h3>
+              <p>${data.collection.items[i].data[0].description}</p>            
+              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+            </div>`
+          )
+        }
+        // handle greater number of results than numberOfStarResultsToShow
+      } else if (resultArrayLength >= numberOfStarResultsToShow) {
+        for (let i = 0; i < numberOfStarResultsToShow; i++) {
+          starList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+            </div> 
+            <div class="pictureInformation">
+              <h3>${data.collection.items[i].data[0].title}</h3>
+              <p>${data.collection.items[i].data[0].description}</p>            
+              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+            </div>`
+          )
+        }
       }
       $('.contentContainer').html(
         `
@@ -250,25 +286,44 @@ function displayNebulaSearchData(data){
   console.log('.ajax has returned json and displayNebulaSearchData ran');
   console.log(data);
   console.log(data.collection.items.length);
-    // handle no elements returned
+    // handle no elements returned after query
     if (data.collection.items.length === 0) {
       const noNebulasFoundPage = generateNoNebulasFoundPageString();
       $('.contentContainer').html(noNebulasFoundPage);
     } else {
       const nebulaList = []
-      const numberOfNebulaResultsToShow = 3
-      for (let i = 0; i <= numberOfNebulaResultsToShow; i++) {
-        nebulaList.push(
-          `<div class="imageContainer">
-          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-          </div> 
-          <div class="pictureInformation">
-            <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
-            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-          </div>
-          `
-        )
+      const resultArrayLength = data.collection.items.length;
+      const numberOfNebulaResultsToShow = 5
+      // handle fewer objects returned than numberOfNebulaResultsToShow
+      if (resultArrayLength < numberOfNebulaResultsToShow) {
+        for (let i = 0; i < resultArrayLength; i++) {
+          nebulaList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+            </div> 
+            <div class="pictureInformation">
+              <h3>${data.collection.items[i].data[0].title}</h3>
+              <p>${data.collection.items[i].data[0].description}</p>            
+              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+            </div>
+            `
+          )
+        }
+        // handle greater number of results than numberOfNebulaResultsToShow
+      } else if (resultArrayLength >= numberOfNebulaResultsToShow) {
+        for (let i = 0; i < numberOfNebulaResultsToShow; i++) {
+          nebulaList.push(
+            `<div class="imageContainer">
+            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+            </div> 
+            <div class="pictureInformation">
+              <h3>${data.collection.items[i].data[0].title}</h3>
+              <p>${data.collection.items[i].data[0].description}</p>            
+              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+            </div>
+            `
+          )
+        }
       }
         $('.contentContainer').html(
           `
@@ -305,7 +360,7 @@ function generateStarSearchPageString(){
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Sirius, Betelgeuse, Vega</p>  
+      <p>Possible search options: Sirius, Betelgeuse, Vega, Witch, star system</p>  
     </section>
   </div>
   `
@@ -325,7 +380,7 @@ function generateNebulaSearchPageString(){
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>  
+      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p>  
     </section>
   </div>
   `
@@ -359,7 +414,7 @@ function generatePlanetSearchPageString(){
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Mercury, Venus, Neptune</p>  
+      <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>  
   </section>
   </div>
   `
