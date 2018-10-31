@@ -92,7 +92,7 @@ function generateNoStarsFoundPageString(){
                 <button type="submit">Search</button>
             </div>
         </form>
-        <p>Possible search options: Sirius, Betelgeuse, Vega, Star system</p>
+        <p>Possible search options: Betelgeuse, Vega, Star system</p>
 
       </section>
 
@@ -336,7 +336,7 @@ function generateStarSearchPageString(){
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Sirius, Betelgeuse, Vega, Witch, star system</p>  
+      <p>Possible search options: Orion, Betelgeuse, Vega, Witch, star system</p>  
     </section>
   </div>
   `
