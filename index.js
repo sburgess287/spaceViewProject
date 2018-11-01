@@ -6,6 +6,7 @@ const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
 function getDataFromApi(query, description_508, callback) {
 //function getDataFromApi(query, callback) {
+  $('.contentContainer').html('Loading....');
   console.log('getDataFromApi ran');
   console.log(query);
   const params = {
@@ -31,8 +32,7 @@ function getDataFromApi(query, description_508, callback) {
       error : function (a,b,c){
         console.log("whateverI want",c);
       }
-    }, 
-      
+    },  
   ) 
 }
 
@@ -157,7 +157,7 @@ function displayNasaSearchData(data) {
             </div>`
           )
         } 
-    } else if (resultArrayLength >= numberOfResultsToShow) {
+      } else if (resultArrayLength >= numberOfResultsToShow) {
         for (let i = 0; i <= numberOfResultsToShow; i++) {
           planetList.push(
             `<div class="imageContainer">
