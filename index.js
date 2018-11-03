@@ -434,7 +434,6 @@ function showWelcomePage(){
 
 function handleForm() {
   console.log('handleForm ran');
-  // Show welcome page
   showWelcomePage();
 
   // Listen for the form submit on '.search-planet-form'
