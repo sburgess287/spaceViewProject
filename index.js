@@ -5,21 +5,13 @@ const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 
 // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
 function getDataFromApi(query, description_508, callback) {
-//function getDataFromApi(query, callback) {
   $('.contentContainer').html('Loading....');
-  //console.log('getDataFromApi ran');
-  //console.log(query);
   const params = {
     media_type : 'image',
-    //q : 'planet',
-    //title : query,
-  // year_start : '2017',
     description_508 : description_508,
     q : query,
-    
-
   };
- // Use .ajax method to retrieve data from the Nasa API
+  // Use .ajax method to retrieve data from the Nasa API
   $.ajax(
     {
       url : nasaSearchUrl,
@@ -29,7 +21,7 @@ function getDataFromApi(query, description_508, callback) {
         api_key : apiKey,
       },
       success : callback,
-      error : function (a,b,c){
+      error : function (a,b,c) {
         console.log("Error message: ",c);
       }
     },  
@@ -92,7 +84,7 @@ function generateNoStarsFoundPageString(){
               <button type="submit">Search</button>
           </div>
       </form>
-      <p>Possible search options: Sirius, Betelgeuse, Vega, Star system</p>
+      <p>Possible search options: Betelgeuse, Vega, Star system</p>
       <button class="homepage-btn" type="button">Start Over</button>
     </section>
   </div>
@@ -177,7 +169,7 @@ function displayNasaSearchData(data) {
         <!-- Planet page for returning image-->
         <div class="planet-image-page">
           <section role="region" class="container col-12">
-            <h2>Planet Page</h2>
+            <h2>Planet Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
               <button class="planets-btn" type="button">Search Planets</button>
@@ -239,7 +231,7 @@ function displayStarSearchData(data){
       <!-- Star Return Image page-->
       <div class="star-image-page" >
         <section role="region" class="container col-12">
-          <h2>Star Page</h2>
+          <h2>Star Search Results</h2>
           <p>Choose to search for Planets, Stars, or Nebulae</p>
           <div class="search-options">
             <button class="planets-btn" type="button">Search Planets</button>
@@ -303,7 +295,7 @@ function displayNebulaSearchData(data){
       <!-- Nebula Return Image page-->
         <div class="nebula-image-page">
           <section role="region" class="container col 12">
-            <h2>Nebula Page</h2>
+            <h2>Nebulae Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
               <button class="planets-btn" type="button">Search Planets</button>
@@ -335,7 +327,7 @@ function generateStarSearchPageString(){
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Sirius, Betelgeuse, Vega, Witch, star system</p>
+      <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
       <button class="homepage-btn" type="button">Start Over</button>
     </section>
   </div>
