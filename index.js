@@ -6,8 +6,9 @@ const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
 function getDataFromApi(query, description_508, callback) {
 //function getDataFromApi(query, callback) {
-  console.log('getDataFromApi ran');
-  console.log(query);
+  $('.contentContainer').html('Loading....');
+  //console.log('getDataFromApi ran');
+  //console.log(query);
   const params = {
     media_type : 'image',
     //q : 'planet',
@@ -29,10 +30,9 @@ function getDataFromApi(query, description_508, callback) {
       },
       success : callback,
       error : function (a,b,c){
-        console.log("whateverI want",c);
+        console.log("Error message: ",c);
       }
-    }, 
-      
+    },  
   ) 
 }
 
@@ -132,8 +132,8 @@ function generateNoNebulasFoundPageString(){
 
 // This function loads images and data for Planet Search from the Nasa API
 function displayNasaSearchData(data) {
-  console.log('.ajax has returned json, and displayNasaSearchData ran');
-  console.log(data);
+  //console.log('.ajax has returned json, and displayNasaSearchData ran');
+  //console.log(data);
   console.log(data.collection.items.length);
     // handle no elements returned
     if (data.collection.items.length === 0) {
@@ -157,7 +157,7 @@ function displayNasaSearchData(data) {
             </div>`
           )
         } 
-    } else if (resultArrayLength >= numberOfResultsToShow) {
+      } else if (resultArrayLength >= numberOfResultsToShow) {
         for (let i = 0; i <= numberOfResultsToShow; i++) {
           planetList.push(
             `<div class="imageContainer">
@@ -195,8 +195,8 @@ function displayNasaSearchData(data) {
 
 // This function loads images and data for Star Search from the Nasa API
 function displayStarSearchData(data){
-  console.log('.ajax has returned json and displayStarSearchData ran');
-  console.log(data);
+  //console.log('.ajax has returned json and displayStarSearchData ran');
+  //console.log(data);
   console.log(data.collection.items.length);
     // handle no elements returned after query
     if (data.collection.items.length === 0) {
@@ -258,8 +258,8 @@ function displayStarSearchData(data){
 
 // This function loads images and data for Nebula Search from the Nasa API
 function displayNebulaSearchData(data){
-  console.log('.ajax has returned json and displayNebulaSearchData ran');
-  console.log(data);
+  //console.log('.ajax has returned json and displayNebulaSearchData ran');
+  //console.log(data);
   console.log(data.collection.items.length);
     // handle no elements returned after query
     if (data.collection.items.length === 0) {
@@ -471,17 +471,17 @@ function handleForm() {
   // Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
   // when dynamically loaded on different pages
   $('.contentContainer').on('click', '.planets-btn', event => {
-    console.log('planets button clicked inside the event delegation function');
+    //console.log('planets button clicked inside the event delegation function');
     showPlanetsSearchPage();
   })
 
   $('.contentContainer').on('click', '.stars-btn', event => {
-    console.log('stars button clicked inside the event delegation function');
+    //console.log('stars button clicked inside the event delegation function');
     showStarSearchPage();
   })
 
   $('.contentContainer').on('click', '.nebulae-btn', event => {
-    console.log('nebulae button clicked inside the event delegation function');
+    //console.log('nebulae button clicked inside the event delegation function');
     showNebulasSearchPage();
   })
 
