@@ -5,21 +5,13 @@ const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 
 // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
 function getDataFromApi(query, description_508, callback) {
-//function getDataFromApi(query, callback) {
   $('.contentContainer').html('Loading....');
-  //console.log('getDataFromApi ran');
-  //console.log(query);
   const params = {
     media_type : 'image',
-    //q : 'planet',
-    //title : query,
-  // year_start : '2017',
     description_508 : description_508,
     q : query,
-    
-
   };
- // Use .ajax method to retrieve data from the Nasa API
+  // Use .ajax method to retrieve data from the Nasa API
   $.ajax(
     {
       url : nasaSearchUrl,
@@ -29,7 +21,7 @@ function getDataFromApi(query, description_508, callback) {
         api_key : apiKey,
       },
       success : callback,
-      error : function (a,b,c){
+      error : function (a,b,c) {
         console.log("Error message: ",c);
       }
     },  
@@ -54,14 +46,14 @@ function generateNoPlanetsFoundPageString(){
         <p>Which Planet do you want to View?</p>
         <form class='search-planet-form'>
           <div>
-            <label for="planet">Search Planet</label>
+            <label for="planet-input">Search Planet</label>
             <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
             <input type="text" id="planet-input" name="planet" required> 
             <button type="submit">Search</button>
           </div>
         </form>
         <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
-
+        <button class="homepage-btn" type="button">Start Over</button>
       </section>
 
     </div>
@@ -72,31 +64,30 @@ function generateNoPlanetsFoundPageString(){
 function generateNoStarsFoundPageString(){
   return`
   <!-- Error Page Star-->
-    <div class="error-page">
-      <section role="region" class="container col-12">
-        <h2>Your Image was not Found!</h2>
-        <p>Choose to search for Planets, Stars, or Nebula</p>
-        <!-- update this to take out form;  bad to have 2 forms on 1-->
-        <div class="search-options">
-            <button class="planets-btn" type="button">Search Planets</button>
-            <button class="stars-btn" type="button">Search Stars</button>
-            <button class="nebulae-btn" type="button">Search Nebulas</button>
-        </div>
-        <p>Or ...Please try again!</p>
-        <p>Which Star do you want to View?</p>
-        <form class='search-star-form'>
-            <div>
-                <label for="new-search-star">Search Stars</label>
-                <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-                <input type="text" id="star-input" name="Star" required> 
-                <button type="submit">Search</button>
-            </div>
-        </form>
-        <p>Possible search options: Betelgeuse, Vega, Star system</p>
-
-      </section>
-
-    </div>
+  <div class="error-page">
+    <section role="region" class="container col-12">
+      <h2>Your Image was not Found!</h2>
+      <p>Choose to search for Planets, Stars, or Nebula</p>
+      <!-- update this to take out form;  bad to have 2 forms on 1-->
+      <div class="search-options">
+          <button class="planets-btn" type="button">Search Planets</button>
+          <button class="stars-btn" type="button">Search Stars</button>
+          <button class="nebulae-btn" type="button">Search Nebulas</button>
+      </div>
+      <p>Or ...Please try again!</p>
+      <p>Which Star do you want to View?</p>
+      <form class='search-star-form'>
+          <div>
+              <label for="star-input">Search Stars</label>
+              <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
+              <input type="text" id="star-input" name="Star" required> 
+              <button type="submit">Search</button>
+          </div>
+      </form>
+      <p>Possible search options: Betelgeuse, Vega, Star system</p>
+      <button class="homepage-btn" type="button">Start Over</button>
+    </section>
+  </div>
   `
 }
 
@@ -118,13 +109,14 @@ function generateNoNebulasFoundPageString(){
       <p>Which Nebula do you want to View?</p>
       <form class='search-nebulae-form'>
         <div>
-          <label for="new-search-nebula">Search Nebulae</label>
+          <label for="nebula-input">Search Nebulae</label>
           <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
           <input type="text" id="nebula-input" name="Nebula" required> 
           <button type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
+      <button class="homepage-btn" type="button">Start Over</button>
     </section>
   </div>
   `
@@ -177,7 +169,7 @@ function displayNasaSearchData(data) {
         <!-- Planet page for returning image-->
         <div class="planet-image-page">
           <section role="region" class="container col-12">
-            <h2>Planet Page</h2>
+            <h2>Planet Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
               <button class="planets-btn" type="button">Search Planets</button>
@@ -186,6 +178,7 @@ function displayNasaSearchData(data) {
             </div>  
             <div class="js-search-results">
              ${planetList.join('')}
+             <button class="homepage-btn" type="button">Start Over</button>
             <div>
           </section>
         </div>`   
@@ -195,52 +188,114 @@ function displayNasaSearchData(data) {
 
 // This function loads images and data for Star Search from the Nasa API
 function displayStarSearchData(data){
-  //console.log('.ajax has returned json and displayStarSearchData ran');
-  //console.log(data);
   console.log(data.collection.items.length);
-    // handle no elements returned after query
-    if (data.collection.items.length === 0) {
-      const noStarsFoundPage = generateNoStarsFoundPageString();
-      $('.contentContainer').html(noStarsFoundPage);
-    } else {
-      const starList = []
-      const resultArrayLength = data.collection.items.length;
-      const numberOfStarResultsToShow = 5;
-      // handle fewer objects returned than numberOfStarResultsToShow
-      if (resultArrayLength < numberOfStarResultsToShow) {
-        for (let i = 0; i < resultArrayLength; i++) {
-          starList.push(
-            `<div class="imageContainer">
-            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-            </div> 
-            <div class="pictureInformation">
-              <h3>${data.collection.items[i].data[0].title}</h3>
-              <p>${data.collection.items[i].data[0].description}</p>            
-              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-            </div>`
-          )
-        }
-        // handle greater number of results than numberOfStarResultsToShow
-      } else if (resultArrayLength >= numberOfStarResultsToShow) {
-        for (let i = 0; i < numberOfStarResultsToShow; i++) {
-          starList.push(
-            `<div class="imageContainer">
-            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-            </div> 
-            <div class="pictureInformation">
-              <h3>${data.collection.items[i].data[0].title}</h3>
-              <p>${data.collection.items[i].data[0].description}</p>            
-              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-            </div>`
-          )
-        }
+  // handle no elements returned after query
+  if (data.collection.items.length === 0) {
+    const noStarsFoundPage = generateNoStarsFoundPageString();
+    $('.contentContainer').html(noStarsFoundPage);
+  } else {
+    const starList = []
+    const resultArrayLength = data.collection.items.length;
+    const numberOfStarResultsToShow = 5;
+    // handle fewer objects returned than numberOfStarResultsToShow
+    if (resultArrayLength < numberOfStarResultsToShow) {
+      for (let i = 0; i < resultArrayLength; i++) {
+        starList.push(
+          `<div class="imageContainer">
+          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+          </div> 
+          <div class="pictureInformation">
+            <h3>${data.collection.items[i].data[0].title}</h3>
+            <p>${data.collection.items[i].data[0].description}</p>            
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+          </div>`
+        )
       }
-      $('.contentContainer').html(
-        `
-        <!-- Star Return Image page-->
-        <div class="star-image-page" >
-          <section role="region" class="container col-12">
-            <h2>Star Page</h2>
+      // handle greater number of results than numberOfStarResultsToShow
+    } else if (resultArrayLength >= numberOfStarResultsToShow) {
+      for (let i = 0; i < numberOfStarResultsToShow; i++) {
+        starList.push(
+          `<div class="imageContainer">
+          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+          </div> 
+          <div class="pictureInformation">
+            <h3>${data.collection.items[i].data[0].title}</h3>
+            <p>${data.collection.items[i].data[0].description}</p>            
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+          </div>`
+        )
+      }
+    }
+    $('.contentContainer').html(
+      `
+      <!-- Star Return Image page-->
+      <div class="star-image-page" >
+        <section role="region" class="container col-12">
+          <h2>Star Search Results</h2>
+          <p>Choose to search for Planets, Stars, or Nebulae</p>
+          <div class="search-options">
+            <button class="planets-btn" type="button">Search Planets</button>
+            <button class="stars-btn" type="button">Search Stars</button>
+            <button class="nebulae-btn" type="button">Search Nebulas</button>
+          </div>
+          <div class="js-search-results">
+          ${starList.join('')}
+          <button class="homepage-btn" type="button">Start Over</button>
+        </section>
+      </div>
+          `
+    )
+  }
+}
+
+// This function loads images and data for Nebula Search from the Nasa API
+function displayNebulaSearchData(data){
+  console.log(data.collection.items.length);
+  // handle no elements returned after query
+  if (data.collection.items.length === 0) {
+    const noNebulasFoundPage = generateNoNebulasFoundPageString();
+    $('.contentContainer').html(noNebulasFoundPage);
+  } else {
+    const nebulaList = []
+    const resultArrayLength = data.collection.items.length;
+    const numberOfNebulaResultsToShow = 5
+    // handle fewer objects returned than numberOfNebulaResultsToShow
+    if (resultArrayLength < numberOfNebulaResultsToShow) {
+      for (let i = 0; i < resultArrayLength; i++) {
+        nebulaList.push(
+          `<div class="imageContainer">
+          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+          </div> 
+          <div class="pictureInformation">
+            <h3>${data.collection.items[i].data[0].title}</h3>
+            <p>${data.collection.items[i].data[0].description}</p>            
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+          </div>
+          `
+        )
+      }
+      // handle greater number of results than numberOfNebulaResultsToShow
+    } else if (resultArrayLength >= numberOfNebulaResultsToShow) {
+      for (let i = 0; i < numberOfNebulaResultsToShow; i++) {
+        nebulaList.push(
+          `<div class="imageContainer">
+          <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
+          </div> 
+          <div class="pictureInformation">
+            <h3>${data.collection.items[i].data[0].title}</h3>
+            <p>${data.collection.items[i].data[0].description}</p>            
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
+          </div>
+          `
+        )
+      }
+    }
+    $('.contentContainer').html(
+      `
+      <!-- Nebula Return Image page-->
+        <div class="nebula-image-page">
+          <section role="region" class="container col 12">
+            <h2>Nebulae Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
               <button class="planets-btn" type="button">Search Planets</button>
@@ -248,77 +303,13 @@ function displayStarSearchData(data){
               <button class="nebulae-btn" type="button">Search Nebulas</button>
             </div>
             <div class="js-search-results">
-            ${starList.join('')}
+            ${nebulaList.join('')}
+            <button class="homepage-btn" type="button">Start Over</button>
           </section>
         </div>
-            `
-        )
-    }
-}
-
-// This function loads images and data for Nebula Search from the Nasa API
-function displayNebulaSearchData(data){
-  //console.log('.ajax has returned json and displayNebulaSearchData ran');
-  //console.log(data);
-  console.log(data.collection.items.length);
-    // handle no elements returned after query
-    if (data.collection.items.length === 0) {
-      const noNebulasFoundPage = generateNoNebulasFoundPageString();
-      $('.contentContainer').html(noNebulasFoundPage);
-    } else {
-      const nebulaList = []
-      const resultArrayLength = data.collection.items.length;
-      const numberOfNebulaResultsToShow = 5
-      // handle fewer objects returned than numberOfNebulaResultsToShow
-      if (resultArrayLength < numberOfNebulaResultsToShow) {
-        for (let i = 0; i < resultArrayLength; i++) {
-          nebulaList.push(
-            `<div class="imageContainer">
-            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-            </div> 
-            <div class="pictureInformation">
-              <h3>${data.collection.items[i].data[0].title}</h3>
-              <p>${data.collection.items[i].data[0].description}</p>            
-              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-            </div>
-            `
-          )
-        }
-        // handle greater number of results than numberOfNebulaResultsToShow
-      } else if (resultArrayLength >= numberOfNebulaResultsToShow) {
-        for (let i = 0; i < numberOfNebulaResultsToShow; i++) {
-          nebulaList.push(
-            `<div class="imageContainer">
-            <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}">
-            </div> 
-            <div class="pictureInformation">
-              <h3>${data.collection.items[i].data[0].title}</h3>
-              <p>${data.collection.items[i].data[0].description}</p>            
-              <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
-            </div>
-            `
-          )
-        }
-      }
-        $('.contentContainer').html(
-          `
-          <!-- Nebula Return Image page-->
-            <div class="nebula-image-page">
-              <section role="region" class="container col 12">
-                <h2>Nebula Page</h2>
-                <p>Choose to search for Planets, Stars, or Nebulae</p>
-                <div class="search-options">
-                  <button class="planets-btn" type="button">Search Planets</button>
-                  <button class="stars-btn" type="button">Search Stars</button>
-                  <button class="nebulae-btn" type="button">Search Nebulas</button>
-                </div>
-                <div class="js-search-results">
-                ${nebulaList.join('')}
-              </section>
-            </div>
-          `
-        )
-    } 
+      `
+    )
+  } 
 }
 
 // Generates string for the Star search page
@@ -331,12 +322,13 @@ function generateStarSearchPageString(){
       <p>Which Stars do you want to View?</p>
       <form class='search-star-form'>
         <div>
-          <label for="star">Search Star</label>
+          <label for="star-input">Search Star</label>
           <input type="text" id="star-input" name="Star" required>
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Orion, Betelgeuse, Vega, Witch, star system</p>  
+      <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
+      <button class="homepage-btn" type="button">Start Over</button>
     </section>
   </div>
   `
@@ -352,12 +344,13 @@ function generateNebulaSearchPageString(){
       <p>Which Nebulas do you want to View?</p>
       <form class='search-nebulae-form'>
         <div>
-          <label for="new-search-nebula">Search Nebulae</label>
+          <label for="nebula-input">Search Nebulae</label>
           <input type="text" id="nebula-input" name="Nebula" required>
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p>  
+      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
+      <button class="homepage-btn" type="button">Start Over</button> 
     </section>
   </div>
   `
@@ -387,12 +380,13 @@ function generatePlanetSearchPageString(){
       <p>Which Planet do you want to View?</p>
       <form class='search-planet-form'>
         <div>
-          <label for="planet">Search Planet</label>
+          <label for="planet-input">Search Planet</label>
           <input type="text" id="planet-input" name="planet" required>
           <button type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>  
+      <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
+      <button class="homepage-btn" type="button">Start Over</button>  
   </section>
   </div>
   `
@@ -443,7 +437,6 @@ function handleForm() {
   // Listen for the form submit on '.search-planet-form'
   // Pass the value of the form to nasa api query
   $('.contentContainer').on('submit', '.search-planet-form', event => {
-  // $('.search-planet-form').submit(event => {
     event.preventDefault();
     const query = $('#planet-input').val();
     console.log(query);
@@ -471,20 +464,20 @@ function handleForm() {
   // Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
   // when dynamically loaded on different pages
   $('.contentContainer').on('click', '.planets-btn', event => {
-    //console.log('planets button clicked inside the event delegation function');
     showPlanetsSearchPage();
   })
 
   $('.contentContainer').on('click', '.stars-btn', event => {
-    //console.log('stars button clicked inside the event delegation function');
     showStarSearchPage();
   })
 
   $('.contentContainer').on('click', '.nebulae-btn', event => {
-    //console.log('nebulae button clicked inside the event delegation function');
     showNebulasSearchPage();
   })
 
+  $('.contentContainer').on('click', '.homepage-btn', event => {
+    showWelcomePage();
+  })
 
 
 }
