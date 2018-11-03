@@ -4,11 +4,19 @@
 
 body {
     background: lightgray;
+    font-family: 'Exo 2', sans-serif;
 }
 
 h1 {
     text-align: center;
     padding-top: 2%; /* may take this out with other styling */
+   /* font-family: 'Archivo', sans-serif;*/
+  /* font-family: 'Roboto', sans-serif;*/
+
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
 }
 
 .container, .contentContainer {
