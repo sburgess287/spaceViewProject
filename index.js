@@ -415,7 +415,10 @@ function generateNewPageString(){
       </div>
       <!--Sample image maybe IMage of the day from Nasa-->
       <div class="imageContainer">
-        <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image" alt="Sweet Picture of Saturn; will use info from API call">
+        <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image" alt="This illustration shows NASA's 
+        Cassini spacecraft in orbit around Saturn. Cassini made 22 orbits that swooped between the rings and the planet before ending its mission 
+        on Sept. 15, 2017, with a final plunge into Saturn.">
+        <p>Cassini spacecraft in orbit around Saturn</p>
       </div>       
   </section>
   `
