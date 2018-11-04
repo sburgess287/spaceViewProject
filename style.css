@@ -33,8 +33,7 @@ p {
     margin-right: auto;
     text-align: center;
     min-height: 600px;
-
-    
+ 
 }
 
 .responsive-image { 
@@ -61,6 +60,24 @@ p {
     font-size: large;
 }
 
+.css-search-buttons {
+    font-family:'Archivo', sans-serif;  
+    font-size: medium;
+    border-radius: 3em;
+    padding: .5em;
+    margin-bottom:2em;
+    margin-left: 2em;
+}
+
+.css-input-forms {
+    height: 3em;
+    border-radius: 3em;
+    width: 10%;
+    font-size: medium;
+    padding: .5em;
+
+}
+
 .css-homepage-btn {
     font-family:'Archivo', sans-serif;  
     font-size: medium;
@@ -73,8 +90,6 @@ p {
 .css-footer {
     padding: 20px;
     text-align: center;
-    
-
 
 }
 

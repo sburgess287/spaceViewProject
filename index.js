@@ -38,9 +38,9 @@ function generateNoPlanetsFoundPageString(){
         <p>Choose to search for Planets, Stars, or Nebula</p>
         <!-- update this to take out form;  bad to have 2 forms on 1-->
         <div class="search-options">
-          <button class="planets-btn" type="button">Search Planets</button>
-          <button class="stars-btn" type="button">Search Stars</button>
-          <button class="nebulae-btn" type="button">Search Nebulas</button>
+          <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+          <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+          <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
         </div>
         <p>Or ...Please try again!</p>
         <p>Which Planet do you want to View?</p>
@@ -48,8 +48,8 @@ function generateNoPlanetsFoundPageString(){
           <div>
             <label for="planet-input">Search Planet</label>
             <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-            <input type="text" id="planet-input" name="planet" required> 
-            <button type="submit">Search</button>
+            <input class="css-input-forms" type="text" id="planet-input" name="planet" required> 
+            <button class="css-search-buttons" type="submit">Search</button>
           </div>
         </form>
         <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
@@ -70,9 +70,9 @@ function generateNoStarsFoundPageString(){
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
       <div class="search-options">
-          <button class="planets-btn" type="button">Search Planets</button>
-          <button class="stars-btn" type="button">Search Stars</button>
-          <button class="nebulae-btn" type="button">Search Nebulas</button>
+          <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+          <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+          <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Star do you want to View?</p>
@@ -80,8 +80,8 @@ function generateNoStarsFoundPageString(){
           <div>
               <label for="star-input">Search Stars</label>
               <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-              <input type="text" id="star-input" name="Star" required> 
-              <button type="submit">Search</button>
+              <input class="css-input-forms" type="text" id="star-input" name="Star" required> 
+              <button class="css-search-buttons" type="submit">Search</button>
           </div>
       </form>
       <p>Possible search options: Betelgeuse, Vega, Star system</p>
@@ -101,9 +101,9 @@ function generateNoNebulasFoundPageString(){
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
       <div class="search-options">
-        <button class="planets-btn" type="button">Search Planets</button>
-        <button class="stars-btn" type="button">Search Stars</button>
-        <button class="nebulae-btn" type="button">Search Nebulas</button>
+        <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+        <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+        <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Nebula do you want to View?</p>
@@ -111,8 +111,8 @@ function generateNoNebulasFoundPageString(){
         <div>
           <label for="nebula-input">Search Nebulae</label>
           <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-          <input type="text" id="nebula-input" name="Nebula" required> 
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required> 
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
@@ -172,9 +172,9 @@ function displayNasaSearchData(data) {
             <h2>Planet Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
-              <button class="planets-btn" type="button">Search Planets</button>
-              <button class="stars-btn" type="button">Search Stars</button>
-              <button class="nebulae-btn" type="button">Search Nebulas</button>
+              <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+              <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+              <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
             </div>  
             <div class="js-search-results">
              ${planetList.join('')}
@@ -234,9 +234,9 @@ function displayStarSearchData(data){
           <h2>Star Search Results</h2>
           <p>Choose to search for Planets, Stars, or Nebulae</p>
           <div class="search-options">
-            <button class="planets-btn" type="button">Search Planets</button>
-            <button class="stars-btn" type="button">Search Stars</button>
-            <button class="nebulae-btn" type="button">Search Nebulas</button>
+            <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+            <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+            <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
           </div>
           <div class="js-search-results">
           ${starList.join('')}
@@ -298,9 +298,9 @@ function displayNebulaSearchData(data){
             <h2>Nebulae Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
-              <button class="planets-btn" type="button">Search Planets</button>
-              <button class="stars-btn" type="button">Search Stars</button>
-              <button class="nebulae-btn" type="button">Search Nebulas</button>
+              <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+              <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+              <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
             </div>
             <div class="js-search-results">
             ${nebulaList.join('')}
@@ -323,8 +323,8 @@ function generateStarSearchPageString(){
       <form class='search-star-form'>
         <div>
           <label for="star-input">Search Star</label>
-          <input type="text" id="star-input" name="Star" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="star-input" name="Star" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
@@ -345,8 +345,8 @@ function generateNebulaSearchPageString(){
       <form class='search-nebulae-form'>
         <div>
           <label for="nebula-input">Search Nebulae</label>
-          <input type="text" id="nebula-input" name="Nebula" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
@@ -381,8 +381,8 @@ function generatePlanetSearchPageString(){
       <form class='search-planet-form'>
         <div>
           <label for="planet-input">Search Planet</label>
-          <input type="text" id="planet-input" name="planet" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="planet-input" name="planet" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
@@ -409,9 +409,9 @@ function generateNewPageString(){
       <h2>Welcome to the Space View!</h2>
       <p>Choose to search for Planets, Stars, or Nebulae</p>
       <div class="search-options">
-        <button class="planets-btn" type="button">Search Planets</button>
-        <button class="stars-btn" type="button">Search Stars</button>
-        <button class="nebulae-btn" type="button">Search Nebulas</button>
+        <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+        <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+        <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
       <!--Sample image: Cassini Spacecraft around Saturn-->
       <div class="imageContainer">
