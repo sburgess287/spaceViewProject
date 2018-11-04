@@ -3,7 +3,7 @@
 }
 
 body {
-    background: lightgray;
+    background: #E1E6E3;
     font-family: 'Exo 2', sans-serif;
 
 }
@@ -16,6 +16,7 @@ main {
 h1 {
     text-align: center;
     padding-top: 2%; /* may take this out with other styling */
+    color: #142020;
    /* font-family: 'Archivo', sans-serif;*/
   /* font-family: 'Roboto', sans-serif;*/
 
@@ -27,7 +28,9 @@ h2 {
 
 p {
     font-size: 16px;
+    color: #162524;
 }
+
 .css-container {
     margin-left: auto;
     margin-right: auto;
@@ -58,6 +61,8 @@ p {
     text-align: left;
     max-width: 960px;
     font-size: large;
+    color: #1C2E2D;
+
 }
 
 .css-search-buttons {
@@ -67,6 +72,8 @@ p {
     padding: .5em;
     margin-bottom:2em;
     margin-left: 2em;
+    background: #F1F6F1;
+    border: 2px solid #79848F;
 }
 
 .css-input-forms {
@@ -75,6 +82,8 @@ p {
     width: 10%;
     font-size: medium;
     padding: .5em;
+    background: #F1F6F1;
+    border: 2px solid #79848F
 
 }
 
@@ -84,12 +93,15 @@ p {
     border-radius: 3em;
     padding: .5em;
     margin-bottom:2em;
+    background: #F1F6F1;
+    border: 2px solid #79848F;
 
 }
 
 .css-footer {
     padding: 20px;
     text-align: center;
+   
 
 }
 
