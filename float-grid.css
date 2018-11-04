@@ -98,6 +98,14 @@
         text-align: center;
     }
 
+    .css-input-forms {
+        width: 40%;
+    }
+
+    .css-search-buttons {
+      margin-left: 0;
+    }
+
  }
 
      
