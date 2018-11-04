@@ -33,14 +33,14 @@ function generateNoPlanetsFoundPageString(){
   return`
   <!-- Error Page-->
     <div class="error-page">
-      <section role="region" class="container col-12">
+      <section role="region" class="container css-container col-12">
         <h2>Your Image was not Found!</h2>
         <p>Choose to search for Planets, Stars, or Nebula</p>
         <!-- update this to take out form;  bad to have 2 forms on 1-->
         <div class="search-options">
-          <button class="planets-btn" type="button">Search Planets</button>
-          <button class="stars-btn" type="button">Search Stars</button>
-          <button class="nebulae-btn" type="button">Search Nebulas</button>
+          <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+          <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+          <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
         </div>
         <p>Or ...Please try again!</p>
         <p>Which Planet do you want to View?</p>
@@ -48,12 +48,12 @@ function generateNoPlanetsFoundPageString(){
           <div>
             <label for="planet-input">Search Planet</label>
             <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-            <input type="text" id="planet-input" name="planet" required> 
-            <button type="submit">Search</button>
+            <input class="css-input-forms" type="text" id="planet-input" name="planet" required> 
+            <button class="css-search-buttons" type="submit">Search</button>
           </div>
         </form>
         <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
-        <button class="homepage-btn" type="button">Start Over</button>
+        <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
       </section>
 
     </div>
@@ -65,14 +65,14 @@ function generateNoStarsFoundPageString(){
   return`
   <!-- Error Page Star-->
   <div class="error-page">
-    <section role="region" class="container col-12">
+    <section role="region" class="container css-container col-12">
       <h2>Your Image was not Found!</h2>
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
       <div class="search-options">
-          <button class="planets-btn" type="button">Search Planets</button>
-          <button class="stars-btn" type="button">Search Stars</button>
-          <button class="nebulae-btn" type="button">Search Nebulas</button>
+          <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+          <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+          <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Star do you want to View?</p>
@@ -80,12 +80,12 @@ function generateNoStarsFoundPageString(){
           <div>
               <label for="star-input">Search Stars</label>
               <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-              <input type="text" id="star-input" name="Star" required> 
-              <button type="submit">Search</button>
+              <input class="css-input-forms" type="text" id="star-input" name="Star" required> 
+              <button class="css-search-buttons" type="submit">Search</button>
           </div>
       </form>
       <p>Possible search options: Betelgeuse, Vega, Star system</p>
-      <button class="homepage-btn" type="button">Start Over</button>
+      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
   </div>
   `
@@ -96,14 +96,14 @@ function generateNoNebulasFoundPageString(){
   return`
   <!-- Error Page Nebula-->
   <div class="error-page">
-    <section role="region" class="container col-12">
+    <section role="region" class="container css-container col-12">
       <h2>Your Image was not Found!</h2>
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
       <div class="search-options">
-        <button class="planets-btn" type="button">Search Planets</button>
-        <button class="stars-btn" type="button">Search Stars</button>
-        <button class="nebulae-btn" type="button">Search Nebulas</button>
+        <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+        <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+        <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Nebula do you want to View?</p>
@@ -111,12 +111,12 @@ function generateNoNebulasFoundPageString(){
         <div>
           <label for="nebula-input">Search Nebulae</label>
           <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-          <input type="text" id="nebula-input" name="Nebula" required> 
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required> 
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
-      <button class="homepage-btn" type="button">Start Over</button>
+      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
   </div>
   `
@@ -144,7 +144,7 @@ function displayNasaSearchData(data) {
             </div> 
             <div class="pictureInformation">
               <h3>${data.collection.items[i].data[0].title}</h3>
-              <p>${data.collection.items[i].data[0].description}</p>            
+              <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
             </div>`
           )
@@ -157,7 +157,7 @@ function displayNasaSearchData(data) {
           </div> 
           <div class="pictureInformation">
             <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
+            <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
             <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
           </div>`
           )
@@ -168,17 +168,17 @@ function displayNasaSearchData(data) {
         `
         <!-- Planet page for returning image-->
         <div class="planet-image-page">
-          <section role="region" class="container col-12">
+          <section role="region" class="container css-container col-12">
             <h2>Planet Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
-              <button class="planets-btn" type="button">Search Planets</button>
-              <button class="stars-btn" type="button">Search Stars</button>
-              <button class="nebulae-btn" type="button">Search Nebulas</button>
+              <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+              <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+              <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
             </div>  
             <div class="js-search-results">
              ${planetList.join('')}
-             <button class="homepage-btn" type="button">Start Over</button>
+             <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
             <div>
           </section>
         </div>`   
@@ -206,7 +206,7 @@ function displayStarSearchData(data){
           </div> 
           <div class="pictureInformation">
             <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
+            <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
             <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
           </div>`
         )
@@ -220,7 +220,7 @@ function displayStarSearchData(data){
           </div> 
           <div class="pictureInformation">
             <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
+            <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
             <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
           </div>`
         )
@@ -230,17 +230,17 @@ function displayStarSearchData(data){
       `
       <!-- Star Return Image page-->
       <div class="star-image-page" >
-        <section role="region" class="container col-12">
+        <section role="region" class="container css-container col-12">
           <h2>Star Search Results</h2>
           <p>Choose to search for Planets, Stars, or Nebulae</p>
           <div class="search-options">
-            <button class="planets-btn" type="button">Search Planets</button>
-            <button class="stars-btn" type="button">Search Stars</button>
-            <button class="nebulae-btn" type="button">Search Nebulas</button>
+            <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+            <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+            <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
           </div>
           <div class="js-search-results">
           ${starList.join('')}
-          <button class="homepage-btn" type="button">Start Over</button>
+          <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
         </section>
       </div>
           `
@@ -268,7 +268,7 @@ function displayNebulaSearchData(data){
           </div> 
           <div class="pictureInformation">
             <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
+            <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
             <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
           </div>
           `
@@ -283,7 +283,7 @@ function displayNebulaSearchData(data){
           </div> 
           <div class="pictureInformation">
             <h3>${data.collection.items[i].data[0].title}</h3>
-            <p>${data.collection.items[i].data[0].description}</p>            
+            <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
             <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
           </div>
           `
@@ -294,17 +294,17 @@ function displayNebulaSearchData(data){
       `
       <!-- Nebula Return Image page-->
         <div class="nebula-image-page">
-          <section role="region" class="container col 12">
+          <section role="region" class="container css-container col 12">
             <h2>Nebulae Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
-              <button class="planets-btn" type="button">Search Planets</button>
-              <button class="stars-btn" type="button">Search Stars</button>
-              <button class="nebulae-btn" type="button">Search Nebulas</button>
+              <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+              <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+              <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
             </div>
             <div class="js-search-results">
             ${nebulaList.join('')}
-            <button class="homepage-btn" type="button">Start Over</button>
+            <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
           </section>
         </div>
       `
@@ -316,19 +316,19 @@ function displayNebulaSearchData(data){
 function generateStarSearchPageString(){
   return`
   <div class="star-search-page">
-    <section role="region" class="container col-12">
+    <section role="region" class="container css-container col-12">
       <h2>Star Page</h2>
       <!-- considering adding radio buttons?  there's a limited number of planets.-->
       <p>Which Stars do you want to View?</p>
       <form class='search-star-form'>
         <div>
           <label for="star-input">Search Star</label>
-          <input type="text" id="star-input" name="Star" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="star-input" name="Star" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
-      <button class="homepage-btn" type="button">Start Over</button>
+      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
   </div>
   `
@@ -339,18 +339,18 @@ function generateNebulaSearchPageString(){
   return`
   <!-- Nebula Search page-->
   <div class="nebula-search-page">
-    <section role="region" class="container col-12">
+    <section role="region" class="container css-container col-12">
       <h2>Nebula Page</h2>
       <p>Which Nebulas do you want to View?</p>
       <form class='search-nebulae-form'>
         <div>
           <label for="nebula-input">Search Nebulae</label>
-          <input type="text" id="nebula-input" name="Nebula" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
-      <button class="homepage-btn" type="button">Start Over</button> 
+      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button> 
     </section>
   </div>
   `
@@ -375,18 +375,18 @@ function generatePlanetSearchPageString(){
   return`
   <!-- Planet page for search-->
   <div class="planet-search-page">
-    <section role="region" class="container col-12">
+    <section role="region" class="container css-container col-12">
       <h2>Planet Page</h2>
       <p>Which Planet do you want to View?</p>
       <form class='search-planet-form'>
         <div>
           <label for="planet-input">Search Planet</label>
-          <input type="text" id="planet-input" name="planet" required>
-          <button type="submit">Search</button>
+          <input class="css-input-forms" type="text" id="planet-input" name="planet" required>
+          <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
       <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
-      <button class="homepage-btn" type="button">Start Over</button>  
+      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>  
   </section>
   </div>
   `
@@ -409,16 +409,16 @@ function generateNewPageString(){
       <h2>Welcome to the Space View!</h2>
       <p>Choose to search for Planets, Stars, or Nebulae</p>
       <div class="search-options">
-        <button class="planets-btn" type="button">Search Planets</button>
-        <button class="stars-btn" type="button">Search Stars</button>
-        <button class="nebulae-btn" type="button">Search Nebulas</button>
+        <button class="planets-btn css-search-buttons" type="button">Search Planets</button>
+        <button class="stars-btn css-search-buttons" type="button">Search Stars</button>
+        <button class="nebulae-btn css-search-buttons" type="button">Search Nebulas</button>
       </div>
-      <!--Sample image maybe IMage of the day from Nasa-->
+      <!--Sample image: Cassini Spacecraft around Saturn-->
       <div class="imageContainer">
         <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image" alt="This illustration shows NASA's 
         Cassini spacecraft in orbit around Saturn. Cassini made 22 orbits that swooped between the rings and the planet before ending its mission 
         on Sept. 15, 2017, with a final plunge into Saturn.">
-        <p>Cassini spacecraft in orbit around Saturn</p>
+        <p>"Cassini spacecraft in orbit around Saturn"</p>
       </div>       
   </section>
   `

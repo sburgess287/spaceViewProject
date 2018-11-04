@@ -5,6 +5,12 @@
 body {
     background: lightgray;
     font-family: 'Exo 2', sans-serif;
+
+}
+
+main {
+    line-height: 1.6;
+    padding-bottom: 3em;
 }
 
 h1 {
@@ -19,11 +25,15 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
-.container, .contentContainer {
+p {
+    font-size: 16px;
+}
+.css-container {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    
+    min-height: 600px;
+ 
 }
 
 .responsive-image { 
@@ -33,17 +43,54 @@ h2 {
 
 .imageContainer {
     padding:20px;
+    padding-top: 5%;
+
 }
 
 .pictureInformation {
     padding-left: 20%;
     padding-right: 20%;
+    padding-bottom: 3%;
 
 }
 
-footer {
+.css-image-description-text {
+    text-align: left;
+    max-width: 960px;
+    font-size: large;
+}
+
+.css-search-buttons {
+    font-family:'Archivo', sans-serif;  
+    font-size: medium;
+    border-radius: 3em;
+    padding: .5em;
+    margin-bottom:2em;
+    margin-left: 2em;
+}
+
+.css-input-forms {
+    height: 3em;
+    border-radius: 3em;
+    width: 10%;
+    font-size: medium;
+    padding: .5em;
+
+}
+
+.css-homepage-btn {
+    font-family:'Archivo', sans-serif;  
+    font-size: medium;
+    border-radius: 3em;
+    padding: .5em;
+    margin-bottom:2em;
+
+}
+
+.css-footer {
     padding: 20px;
     text-align: center;
+
 }
 
 
