@@ -5,7 +5,6 @@
 body {
     background: #E1E6E3;
     font-family: 'Exo 2', sans-serif;
-
 }
 
 main {
@@ -27,8 +26,8 @@ h1 {
     font-size: -webkit-xxx-large;
     -webkit-text-stroke: .5px #162524;
     
-   /* font-family: 'Archivo', sans-serif;*/
-  /* font-family: 'Roboto', sans-serif;*/
+    /*font-family: 'Archivo', sans-serif;*/
+   /* font-family: 'Roboto', sans-serif;*/
 
 }
 
