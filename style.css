@@ -17,14 +17,15 @@ main {
     padding-bottom: 3em;
     background: #f1f6f1;
     border: 2px solid #162524;
+    background-image: url('./MySpaceScales.png');
 }
 
 h1 {
     text-align: center;
     padding-top: 2%; /* may take this out with other styling */
-    color: #142020;
+    color: #162524;
     font-size: -webkit-xxx-large;
-    -webkit-text-stroke: 1px #162524;
+    -webkit-text-stroke: .5px #162524;
     
    /* font-family: 'Archivo', sans-serif;*/
   /* font-family: 'Roboto', sans-serif;*/
