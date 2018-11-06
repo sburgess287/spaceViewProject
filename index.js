@@ -40,7 +40,7 @@ function generateNoPlanetsFoundPageString(){
   return`
   <!-- Error Page-->
     <div class="error-page">
-      <section role="region" class="container css-container col-12">
+      <section role="region" class="container css-container">
         <h2>Your Image was not Found!</h2>
         <p>Choose to search for Planets, Stars, or Nebula</p>
         <!-- update this to take out form;  bad to have 2 forms on 1-->
@@ -72,7 +72,7 @@ function generateNoStarsFoundPageString(){
   return`
   <!-- Error Page Star-->
   <div class="error-page">
-    <section role="region" class="container css-container col-12">
+    <section role="region" class="container css-container">
       <h2>Your Image was not Found!</h2>
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
@@ -103,7 +103,7 @@ function generateNoNebulasFoundPageString(){
   return`
   <!-- Error Page Nebula-->
   <div class="error-page">
-    <section role="region" class="container css-container col-12">
+    <section role="region" class="container css-container">
       <h2>Your Image was not Found!</h2>
       <p>Choose to search for Planets, Stars, or Nebula</p>
       <!-- update this to take out form;  bad to have 2 forms on 1-->
@@ -177,7 +177,7 @@ function displayNasaSearchData(data) {
         `
         <!-- Planet page for returning image-->
         <div class="planet-image-page">
-          <section role="region" class="container css-container col-12">
+          <section role="region" class="container css-container">
             <h2>Planet Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
@@ -241,7 +241,7 @@ function displayStarSearchData(data){
       `
       <!-- Star Return Image page-->
       <div class="star-image-page" >
-        <section role="region" class="container css-container col-12">
+        <section role="region" class="container css-container">
           <h2>Star Search Results</h2>
           <p>Choose to search for Planets, Stars, or Nebulae</p>
           <div class="search-options">
@@ -307,7 +307,7 @@ function displayNebulaSearchData(data){
       `
       <!-- Nebula Return Image page-->
         <div class="nebula-image-page">
-          <section role="region" class="container css-container col 12">
+          <section role="region" class="container css-container">
             <h2>Nebulae Search Results</h2>
             <p>Choose to search for Planets, Stars, or Nebulae</p>
             <div class="search-options">
@@ -329,7 +329,7 @@ function displayNebulaSearchData(data){
 function generateStarSearchPageString(){
   return`
   <div class="star-search-page">
-    <section role="region" class="container css-container col-12">
+    <section role="region" class="container css-container">
       <h2>Star Page</h2>
       <!-- considering adding radio buttons?  there's a limited number of planets.-->
       <p>Which Stars do you want to View?</p>
@@ -352,7 +352,7 @@ function generateNebulaSearchPageString(){
   return`
   <!-- Nebula Search page-->
   <div class="nebula-search-page">
-    <section role="region" class="container css-container col-12">
+    <section role="region" class="container css-container">
       <h2>Nebula Page</h2>
       <p>Which Nebulas do you want to View?</p>
       <form class='search-nebulae-form'>
@@ -388,7 +388,7 @@ function generatePlanetSearchPageString(){
   return`
   <!-- Planet page for search-->
   <div class="planet-search-page">
-    <section role="region" class="container css-container col-12">
+    <section role="region" class="container css-container">
       <h2>Planet Page</h2>
       <p>Which Planet do you want to View?</p>
       <form class='search-planet-form'>
