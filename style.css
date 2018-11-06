@@ -8,7 +8,8 @@ body {
     font-family: 'Exo 2', sans-serif;
     /* background-image: linear-gradient(#3b4753, rgba(227, 241, 231, 0.6)); */
     /* background: linear-gradient(rgba(227, 241, 231, 0.6), #427A76); */
-    background: linear-gradient(#A9C2C0, #427A76);
+     background: linear-gradient(#e1e6e3, #427A76); */
+    /* background: linear-gradient(#A9C2C0, rgb(127, 177, 173)); */
 }
 
 main {
