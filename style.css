@@ -131,6 +131,7 @@ p {
     display: inline-block;
     width: 64px;
     height: 64px;
+    padding-top: 10em;
 }
 
 .lds-dual-ring:after {
