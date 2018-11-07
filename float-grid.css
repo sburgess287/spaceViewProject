@@ -81,11 +81,19 @@
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
 
+    .css-container {
+      min-height: 7em;
+    }
+
     h1 {
         text-align: center;
         padding: 10%;
         padding-bottom: 0;
         font-size: xx-large;
+    }
+
+    h2 {
+      padding-top: 2em;
     }
 
     .pictureInformation {
