@@ -5,7 +5,6 @@ const apiKey = 'MQP3dZedmR0tH2NUAMuRTva9WKV47YnTwF1mbumk';
 
 // https://images-api.nasa.gov/search?media_type=image&q=Jupiter&keywords=planet
 function getDataFromApi(query, description_508, callback) {
-  // $('.contentContainer').html('Loading....');
   $('.contentContainer').html(createSpinner);
   const params = {
     media_type : 'image',
@@ -147,7 +146,7 @@ function displayNasaSearchData(data) {
         for (let i = 0; i < resultArrayLength; i++) {
           planetList.push(
             `<div class="imageContainer">
-            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
             <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
             </div> 
             <div class="pictureInformation">
@@ -161,7 +160,7 @@ function displayNasaSearchData(data) {
         for (let i = 0; i <= numberOfResultsToShow; i++) {
           planetList.push(
             `<div class="imageContainer">
-            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+            <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
             <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
           </div> 
           <div class="pictureInformation">
@@ -211,7 +210,7 @@ function displayStarSearchData(data){
       for (let i = 0; i < resultArrayLength; i++) {
         starList.push(
           `<div class="imageContainer">
-          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
           <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
           </div> 
           <div class="pictureInformation">
@@ -226,7 +225,7 @@ function displayStarSearchData(data){
       for (let i = 0; i < numberOfStarResultsToShow; i++) {
         starList.push(
           `<div class="imageContainer">
-          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
           <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
           </div> 
           <div class="pictureInformation">
@@ -275,7 +274,7 @@ function displayNebulaSearchData(data){
       for (let i = 0; i < resultArrayLength; i++) {
         nebulaList.push(
           `<div class="imageContainer">
-          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
           <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
           </div> 
           <div class="pictureInformation">
@@ -291,7 +290,7 @@ function displayNebulaSearchData(data){
       for (let i = 0; i < numberOfNebulaResultsToShow; i++) {
         nebulaList.push(
           `<div class="imageContainer">
-          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}">
+          <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" target="_blank">
           <img src="${data.collection.items[i].links[0].href}" class="responsive-image" alt="${data.collection.items[i].data[0].description}"></a>
           </div> 
           <div class="pictureInformation">
