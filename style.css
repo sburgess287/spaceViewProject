@@ -85,6 +85,14 @@ p {
 
 }
 
+.result-cards {
+    background-color:#f1f6f1;
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
 .css-search-buttons {
     font-family:'Archivo', sans-serif;  
     font-size: medium;

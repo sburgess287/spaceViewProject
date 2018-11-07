@@ -81,43 +81,55 @@
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
 
-body {
-  background: #e1e6e3;
-}
+  body {
+    background: #e1e6e3;
+  }
 
-.css-container {
-  min-height: 7em;
-}
+  .css-container {
+    min-height: 7em;
+  }
 
-h1 {
+  h1 {
+      text-align: center;
+      /* padding: 10%; */
+      padding-bottom: 0;
+      font-size: xx-large;
+  }
+
+  h2 {
+    padding-top: 2em;
+  }
+
+  h3 {
     text-align: center;
-    /* padding: 10%; */
-    padding-bottom: 0;
-    font-size: xx-large;
-}
+  }
+  
+  .pictureInformation {
+      padding-left: 5%;
+      text-align: left;
+      padding-right: 5%;
+  }
 
-h2 {
-  padding-top: 2em;
-}
+  .linkStyleInfo {
+      padding: 15%;
+      text-align: center;
+  }
 
-.pictureInformation {
-    padding-left: 5%;
-    text-align: left;
-    padding-right: 5%;
-}
+  .css-input-forms {
+      width: 40%;
+  }
 
-.linkStyleInfo {
-    padding: 15%;
-    text-align: center;
-}
+  .css-search-buttons {
+    margin-left: 0;
+  }
 
-.css-input-forms {
-    width: 40%;
-}
-
-.css-search-buttons {
-  margin-left: 0;
-}
+  .result-cards {
+    background-color:#f1f6f1;
+    padding-bottom: 3em;
+    margin-bottom: 3em;
+    margin-left: 0;
+    margin-right: 0; 
+  }
 
 }
 
@@ -139,12 +151,8 @@ h2 {
 /* iPads (landscape) ----------- */
 /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 /* Styles */
-/* }
+/* } */
 
-/* iPads (portrait) ----------- 
- @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
- Styles 
-
-
-
-
+ /* iPads (portrait) -----------  */
+ /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+ Styles  */
