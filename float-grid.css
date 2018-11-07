@@ -35,87 +35,91 @@
     clear: both;
   } */
   
-  .col-3, .col-4, .col-6, .col-12 {
-    float: left;
+.col-3, .col-4, .col-6, .col-12 {
+  float: left;
+
+  /* Gutters:
+    * Each column is padded by half-a-gutter on each side,
+    *
+    * Half a gutter is 10px, 10/960 (context) = 1.041666%
+    *
+    */
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+}
   
-    /* Gutters:
-     * Each column is padded by half-a-gutter on each side,
-     *
-     * Half a gutter is 10px, 10/960 (context) = 1.041666%
-     *
-     */
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
-  }
-  
-  /* Mobile defaults */
-  .col-3, .col-4, .col-6, .col-12 {
-    width: 100%;
-  }
-  
-  
-  /* Non-mobile, grid */
-  @media only screen and (min-width: 640px) {
-    /* 3 columns, 3/12 in % */
-    .col-3 {
-      width: 25%;
-    }
-  
-    /* 4 columns, 4/12 in % */
-    .col-4 {
-      width: 33.33%;
-    }
-  
-    /* 6 columns 6/12 in % */
-    .col-6 {
-      width: 50%;
-    }
-  
-    /* 12 columns, 12/12 */
-    .col-12 {
-      width: 100%;
-    }
+/* Mobile defaults */
+.col-3, .col-4, .col-6, .col-12 {
+  width: 100%;
+}
+
+
+/* Non-mobile, grid */
+@media only screen and (min-width: 640px) {
+  /* 3 columns, 3/12 in % */
+  .col-3 {
+    width: 25%;
   }
 
-  /* Smartphones (portrait and landscape) ----------- */
+  /* 4 columns, 4/12 in % */
+  .col-4 {
+    width: 33.33%;
+  }
+
+  /* 6 columns 6/12 in % */
+  .col-6 {
+    width: 50%;
+  }
+
+  /* 12 columns, 12/12 */
+  .col-12 {
+    width: 100%;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
 @media screen and (min-device-width : 320px) and (max-device-width : 480px) {
     /* Styles */
 
-    .css-container {
-      min-height: 7em;
-    }
+body {
+  background: #e1e6e3;
+}
 
-    h1 {
-        text-align: center;
-        padding: 10%;
-        padding-bottom: 0;
-        font-size: xx-large;
-    }
+.css-container {
+  min-height: 7em;
+}
 
-    h2 {
-      padding-top: 2em;
-    }
+h1 {
+    text-align: center;
+    /* padding: 10%; */
+    padding-bottom: 0;
+    font-size: xx-large;
+}
 
-    .pictureInformation {
-        padding-left: 5%;
-        text-align: left;
-        padding-right: 5%;
-    }
+h2 {
+  padding-top: 2em;
+}
 
-    .linkStyleInfo {
-        padding: 15%;
-        text-align: center;
-    }
+.pictureInformation {
+    padding-left: 5%;
+    text-align: left;
+    padding-right: 5%;
+}
 
-    .css-input-forms {
-        width: 40%;
-    }
+.linkStyleInfo {
+    padding: 15%;
+    text-align: center;
+}
 
-    .css-search-buttons {
-      margin-left: 0;
-    }
+.css-input-forms {
+    width: 40%;
+}
 
- }
+.css-search-buttons {
+  margin-left: 0;
+}
+
+}
 
      
 /* Smartphones (landscape) ----------- */
