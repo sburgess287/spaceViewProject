@@ -61,7 +61,6 @@ function generateNoPlanetsFoundPageString(){
         <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
       </section>
-
     </div>
   `
 }
@@ -113,7 +112,7 @@ function generateNoNebulasFoundPageString(){
       </div>
       <p>Or ...Please try again!</p>
       <p>Which Nebula do you want to View?</p>
-      <form class='search-nebulae-form'>
+      <form class="search-nebulae-form">
         <div>
           <label for="nebula-input">Search Nebulae</label>
           <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
@@ -197,7 +196,8 @@ function displayNasaSearchData(data) {
              <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
             <div>
           </section>
-        </div>`   
+        </div>
+        `   
       )    
     }
   };
@@ -228,7 +228,8 @@ function displayStarSearchData(data){
               <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
             </div>
-          </div>`
+          </div>
+          `
         )
       }
       // handle greater number of results than numberOfStarResultsToShow
