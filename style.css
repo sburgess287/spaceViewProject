@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+}
+
 body {
     /* background: #E1E6E3; */
     /* background: #1c2e2d; */
@@ -61,29 +65,31 @@ p {
 }
 
 .imageContainer {
-    padding:20px;
+    /* padding:20px; */
     padding-top: 5%;
 }
 
 .pictureInformation {
-    padding-left: 20%;
-    padding-right: 20%;
+    /* padding-left: 20%;
+    padding-right: 20%; */
     padding-bottom: 3%;
 }
 
 .css-image-description-text {
     text-align: left;
-    max-width: 960px;
-    /* max-width: 560px; */
+    max-width: 560px;
     /* margin-left: 10em; */
     font-size: large;
     color: #1C2E2D; 
+    margin: 0 auto;
 }
 
 .result-cards {
     background-color:#f1f6f1;
     padding-bottom: 3em;
     margin-bottom: 3em;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .css-search-buttons {
@@ -92,8 +98,9 @@ p {
     min-width: 5em;
     border-radius: 3em;
     padding: .5em;
-    margin-bottom:2em;
-    margin-left: 2em;
+    margin: 0 12px 1em;
+    /* margin-bottom:2em;
+    margin-left: 2em; */
         /* margin-right: 2em; */
     background: #F1F6F1;
     border: 2px solid #79848F;
