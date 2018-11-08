@@ -143,10 +143,18 @@
 /* @media only screen and (max-width : 320px) {
 /* Styles */
 /* 
+
+
 }/* iPads (portrait and landscape) ----------- */
-/* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+ @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 /* Styles */
-/* }
+  h1 {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+
+  
+}
 
 /* iPads (landscape) ----------- */
 /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
@@ -155,4 +163,8 @@
 
  /* iPads (portrait) -----------  */
  /* @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
- Styles  */
+ Styles 
+
+ 
+
+ } */
