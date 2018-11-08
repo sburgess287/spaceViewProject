@@ -19,22 +19,17 @@ main {
     line-height: 1.6;
     padding-bottom: 5em;
     width:100%;
-    /* padding-top: 10em; */
 }
 
 .css-header {
     padding-bottom: 3em;
-    /* background: #f1f6f1; */
-    /* background-image: url('./MySpaceScalesCompressed.png'); */
-    /* position: fixed; */
     top: 0;
     width: 100%;
-    /* height: 5em; */
 }
 
 h1 {
     text-align: center;
-    padding-top: 2%; /* may take this out with other styling */
+    padding-top: 2%;
     color: #162524;
     font-size: -webkit-xxx-large;
     -webkit-text-stroke: .5px #162524;
@@ -49,8 +44,7 @@ h2 {
 
 p {
     font-size: 16px;
-    color: #162524; 
-    /* color: #e1e6e3 */
+    color: #162524;
 }
 
 .css-container {
@@ -59,7 +53,6 @@ p {
     text-align: center;
     min-height: 600px;
     width:100%;
- 
 }
 
 .responsive-image { 
@@ -70,14 +63,12 @@ p {
 .imageContainer {
     padding:20px;
     padding-top: 5%;
-
 }
 
 .pictureInformation {
     padding-left: 20%;
     padding-right: 20%;
     padding-bottom: 3%;
-
 }
 
 .css-image-description-text {
@@ -85,17 +76,12 @@ p {
     max-width: 960px;
     font-size: large;
     color: #1C2E2D; 
-    /* color: #e1e6e3 */
-
-
 }
 
 .result-cards {
     background-color:#f1f6f1;
     padding-bottom: 3em;
     margin-bottom: 3em;
-    /* margin-left: 10em;
-    margin-right: 10em; */
 }
 
 .css-search-buttons {
@@ -118,7 +104,6 @@ p {
     padding: .5em;
     background: #F1F6F1;
     border: 2px solid #79848F
-
 }
 
 .css-homepage-btn {
@@ -129,14 +114,11 @@ p {
     margin-bottom:2em;
     background: #F1F6F1;
     border: 2px solid #79848F;
-
 }
 
 .css-footer {
     padding: 20px;
     text-align: center;
-   
-
 }
 
 /* Spinner */
