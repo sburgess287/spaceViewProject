@@ -58,7 +58,7 @@ function generateNoPlanetsFoundPageString(){
             <button class="css-search-buttons" type="submit">Search</button>
           </div>
         </form>
-        <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
+        <p>Possible search options: Mars, nebula, Neptune, Pluto, planet, Saturn</p>
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
       </section>
     </div>
@@ -89,7 +89,7 @@ function generateNoStarsFoundPageString(){
               <button class="css-search-buttons" type="submit">Search</button>
           </div>
       </form>
-      <p>Possible search options: Betelgeuse, Vega, Star system</p>
+      <p>Possible search options: Andromeda, Aquila, Cygnus, Gemini, star, Taurus</p>
       <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
   </div>
@@ -120,7 +120,7 @@ function generateNoNebulasFoundPageString(){
           <button class="css-search-buttons" type="submit">Search</button>
         </div>
       </form>
-      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula</p>
+      <p>Possible search options: Butterfly Nebula, Ghost of Jupiter, Orion Nebula, Ring Nebula, Sagittarius,</p>
       <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
   </div>
