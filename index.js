@@ -36,8 +36,8 @@ function createSpinner() {
 }
 
 // Returns the html string for 'No results found' page for Planet Search.
-function generateNoPlanetsFoundPageString(){
-  return`
+function generateNoPlanetsFoundPageString() {
+  return `
   <!-- Error Page-->
     <div class="error-page">
       <section role="region" class="container css-container">
@@ -62,13 +62,12 @@ function generateNoPlanetsFoundPageString(){
         <p>Possible search options: Mars, nebula, Neptune, Pluto, planet, Saturn</p>
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
       </section>
-    </div>
-  `
+    </div>`;
 }
 
 // Returns the html string for 'No results found' page for Star Search
-function generateNoStarsFoundPageString(){
-  return`
+function generateNoStarsFoundPageString() {
+  return `
   <!-- Error Page Star-->
   <div class="error-page">
     <section role="region" class="container css-container">
@@ -93,13 +92,12 @@ function generateNoStarsFoundPageString(){
       <p>Possible search options: Andromeda, Aquila, Cygnus, Gemini, star, Taurus</p>
       <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
-  </div>
-  `
+  </div>`;
 }
 
 // Returns the html string for 'No results found' page for Nebula Search
-function generateNoNebulasFoundPageString(){
-  return`
+function generateNoNebulasFoundPageString() {
+  return `
   <!-- Error Page Nebula-->
   <div class="error-page">
     <section role="region" class="container css-container">
@@ -124,8 +122,7 @@ function generateNoNebulasFoundPageString(){
       <p>Possible search options: Butterfly Nebula, Ghost of Jupiter, Orion Nebula, Ring Nebula, Sagittarius,</p>
       <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>
-  </div>
-  `
+  </div>`;
 }
 
 // This function loads images and data for Planet Search from the Nasa API
@@ -286,7 +283,7 @@ function displayStarSearchData(data) {
 }
 
 // This function loads images and data for Nebula Search from the Nasa API
-function displayNebulaSearchData(data){
+function displayNebulaSearchData(data) {
 
   // Handle no elements returned after query
   if (data.collection.items.length === 0) {
@@ -365,8 +362,8 @@ function displayNebulaSearchData(data){
 }
 
 // Generates string for showStarSearchPage()
-function generateStarSearchPageString(){
-  return`
+function generateStarSearchPageString() {
+  return `
     <div class="star-search-page">
       <section role="region" class="container css-container">
         <h2>Star Page</h2>
@@ -382,13 +379,12 @@ function generateStarSearchPageString(){
         <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
       </section>
-    </div>
-  `
+    </div>`;
 }
 
 // Generates string for showNebulasSearchPage ()
-function generateNebulaSearchPageString(){
-  return`
+function generateNebulaSearchPageString() {
+  return `
     <!-- Nebula Search page-->
     <div class="nebula-search-page">
       <section role="region" class="container css-container">
@@ -404,13 +400,12 @@ function generateNebulaSearchPageString(){
         <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button> 
       </section>
-    </div>
-  `
+    </div>`;
 }
 
 // Generates html for the Planet search page
-function generatePlanetSearchPageString(){
-  return`
+function generatePlanetSearchPageString() {
+  return `
     <!-- Planet page for search-->
     <div class="planet-search-page">
       <section role="region" class="container css-container">
@@ -426,8 +421,7 @@ function generatePlanetSearchPageString(){
         <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
         <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>  
     </section>
-    </div>
-  `
+    </div>`;
 }
 
 // Listens for Click of the Search Nebulas button, then loads the Nebula Search Page
@@ -449,29 +443,28 @@ function showPlanetsSearchPage() {
 }
 
 // Return html for showWelcomePage()
-function generateNewPageString(){
-  return`
-  <section role="region" class="welcome-page">
-      <h2>Welcome to the Space View!</h2>
-      <p>Choose to search for Planets, Stars, or Nebulae</p>
-      <div class="search-options">
-        <button class="planets-btn css-search-buttons" type="button">Planets</button>
-        <button class="stars-btn css-search-buttons" type="button">Stars</button>
-        <button class="nebulae-btn css-search-buttons" type="button">Nebulas</button>
-      </div>
-      <!--Sample image: Cassini Spacecraft around Saturn-->
-      <div class="imageContainer">
-        <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image home-image" alt="This illustration shows NASA's 
-        Cassini spacecraft in orbit around Saturn. Cassini made 22 orbits that swooped between the rings and the planet before ending its mission 
-        on Sept. 15, 2017, with a final plunge into Saturn.">
-        <p>"Cassini spacecraft in orbit around Saturn"</p>
-      </div>       
-  </section>
-  `
+function generateNewPageString() {
+  return `
+    <section role="region" class="welcome-page">
+        <h2>Welcome to the Space View!</h2>
+        <p>Choose to search for Planets, Stars, or Nebulae</p>
+        <div class="search-options">
+          <button class="planets-btn css-search-buttons" type="button">Planets</button>
+          <button class="stars-btn css-search-buttons" type="button">Stars</button>
+          <button class="nebulae-btn css-search-buttons" type="button">Nebulas</button>
+        </div>
+        <!--Sample image: Cassini Spacecraft around Saturn-->
+        <div class="imageContainer">
+          <img src="https://images-assets.nasa.gov/image/PIA22766/PIA22766~thumb.jpg" class="responsive-image home-image" alt="This illustration shows NASA's 
+          Cassini spacecraft in orbit around Saturn. Cassini made 22 orbits that swooped between the rings and the planet before ending its mission 
+          on Sept. 15, 2017, with a final plunge into Saturn.">
+          <p>"Cassini spacecraft in orbit around Saturn"</p>
+        </div>       
+    </section>`;
 }
 
 // Dynamically load the html of the welcome page when the page loads.
-function showWelcomePage(){
+function showWelcomePage() {
   const newPage = generateNewPageString();
   $('.contentContainer').html(newPage);
 }
