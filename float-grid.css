@@ -91,7 +91,6 @@
 
   h1 {
       text-align: center;
-      /* padding: 10%; */
       padding-bottom: 0;
       font-size: xx-large;
   }
@@ -145,14 +144,14 @@
 /* 
 
 
-}/* iPads (portrait and landscape) ----------- */
- @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-/* Styles */
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+  /* Styles */
   h1 {
     padding-left: 3em;
     padding-right: 3em;
   }
-
   
 }
 

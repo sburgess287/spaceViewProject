@@ -7,14 +7,8 @@ html {
 }
 
 body {
-    /* background: #E1E6E3; */
-    /* background: #1c2e2d; */
     font-family: 'Exo 2', sans-serif;
-    /* background-image: linear-gradient(#3b4753, rgba(227, 241, 231, 0.6)); */
-    /* background: linear-gradient(rgba(227, 241, 231, 0.6), #427A76); */
-     /* background: linear-gradient(#e1e6e3, #427A76); */
-     background: linear-gradient(#e1e6e3, rgb(164, 238, 233));
-    /* background: linear-gradient(#A9C2C0, rgb(127, 177, 173)); */
+    background: linear-gradient(#e1e6e3, rgb(164, 238, 233));
     width:100%;
     margin: auto;
 }
@@ -37,9 +31,6 @@ h1 {
     color: #162524;
     font-size: -webkit-xxx-large;
     -webkit-text-stroke: .5px #162524;
-    /*font-family: 'Archivo', sans-serif;*/
-   /* font-family: 'Roboto', sans-serif;*/
-
 }
 
 h2 {
@@ -65,23 +56,24 @@ p {
 }
 
 .imageContainer {
-    /* padding:20px; */
     padding-top: 5%;
 }
 
 .pictureInformation {
-    /* padding-left: 20%;
-    padding-right: 20%; */
     padding-bottom: 3%;
 }
 
 .css-image-description-text {
     text-align: left;
     max-width: 560px;
-    /* margin-left: 10em; */
     font-size: large;
     color: #1C2E2D; 
     margin: 0 auto;
+}
+
+.home-image {
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .result-cards {
@@ -99,9 +91,6 @@ p {
     border-radius: 3em;
     padding: .5em;
     margin: 0 12px 1em;
-    /* margin-bottom:2em;
-    margin-left: 2em; */
-        /* margin-right: 2em; */
     background: #F1F6F1;
     border: 2px solid #79848F;
 }
