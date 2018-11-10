@@ -444,7 +444,7 @@ function showPlanetsSearchPage() {
 
 
 
-// Function that returns the html to load on the welcome page
+// Return html for showWelcomePage()
 function generateNewPageString(){
   return`
   <section role="region" class="welcome-page">
@@ -466,20 +466,17 @@ function generateNewPageString(){
   `
 }
 
-// Dynamically load the html of the welcome page when the page loads
+// Dynamically load the html of the welcome page when the page loads.
 function showWelcomePage(){
-  console.log('showWelcomePage ran');
   const newPage = generateNewPageString();
   $('.contentContainer').html(newPage);
 }
 
-
 function handleForm() {
-  console.log('handleForm ran');
+   
   showWelcomePage();
 
-  // Listen for the form submit on '.search-planet-form'
-  // Pass the value of the form to nasa api query
+  // Listen for the form submit on '.search-planet-form' and pass to Nasa API query.
   $('.contentContainer').on('submit', '.search-planet-form', event => {
     event.preventDefault();
     const query = $('#planet-input').val();
@@ -487,8 +484,7 @@ function handleForm() {
     getDataFromApi(query, 'planet', displayNasaSearchData);
   })
 
-  // Listen for the form submit on '.search-star-form'
-  // Pass the value of the form to nasa api query
+  // Listen for the form submit on '.search-star-form' and pass to Nasa API query.
   $('.contentContainer').on('submit', '.search-star-form', event => {
     event.preventDefault();
     const query = $('#star-input').val();
@@ -496,8 +492,7 @@ function handleForm() {
     getDataFromApi(query, 'star', displayStarSearchData);
   })
 
-  // Listen for the form submit on '.search-nebulae-form'
-  // Pass the value of the form to nasa api query
+  // Listen for the form submit on '.search-nebulae-form' and pass to Nasa API query.
   $('.contentContainer').on('submit', '.search-nebulae-form', event => {
     event.preventDefault();
     const query = $('#nebula-input').val();
@@ -505,8 +500,7 @@ function handleForm() {
     getDataFromApi(query, 'nebulae', displayNebulaSearchData);
   })
 
-  // Listen for clicks on the .contentContainer for clicks on the planet/stars/search buttons 
-  // when dynamically loaded on different pages
+  // Listen for clicks on the .contentContainer for clicks on the planet/stars/nebula search buttons.
   $('.contentContainer').on('click', '.planets-btn', event => {
     showPlanetsSearchPage();
   })
@@ -522,7 +516,6 @@ function handleForm() {
   $('.contentContainer').on('click', '.homepage-btn', event => {
     showWelcomePage();
   })
-
 
 }
 
