@@ -51,6 +51,7 @@
 /* Mobile defaults */
 .col-3, .col-4, .col-6, .col-12 {
   width: 100%;
+  font-size: 24pt;
 }
 
 
@@ -92,11 +93,12 @@
   h1 {
       text-align: center;
       padding-bottom: 0;
-      font-size: xx-large;
+      font-size: 24pt;
   }
 
   h2 {
-    padding-top: 2em;
+    padding-top: 0;
+    font-size: 16pt;
   }
 
   h3 {
@@ -105,8 +107,8 @@
   
   .pictureInformation {
       padding-left: 5%;
-      text-align: left;
       padding-right: 5%;
+      text-align: left;
   }
 
   .linkStyleInfo {
@@ -116,18 +118,8 @@
 
   .css-input-forms {
       width: 40%;
-  }
-
-  .css-search-buttons {
-    margin-left: 0;
-  }
-
-  .result-cards {
-    background-color:#f1f6f1;
-    padding-bottom: 3em;
-    margin-bottom: 3em;
-    margin-left: 0;
-    margin-right: 0; 
+      display: block;
+      margin: 2em auto;
   }
 
 }
@@ -139,9 +131,15 @@
 /* }
 
 /* Smartphones (portrait) ----------- */
-/* @media only screen and (max-width : 320px) {
+@media only screen and (max-width : 320px) { 
 /* Styles */
-/* 
+  h1 {
+    padding-left: 3em;
+    padding-right: 3em;
+    font-size: 24px;
+  }
+ 
+} 
 
 
 /* iPads (portrait and landscape) ----------- */
