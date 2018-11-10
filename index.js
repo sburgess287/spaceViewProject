@@ -254,10 +254,12 @@ function displayStarSearchData(data) {
               <p class="css-image-description-text">"${data.collection.items[i].data[0].description}"</p>            
               <a href="https://www.jpl.nasa.gov/spaceimages/details.php?id=${data.collection.items[i].data[0].nasa_id}" class="linkStyleInfo" target="_blank">Link to image on Nasa website</a>
             </div>
-          </div>`
+          </div>
+          `
         )
       }
     }
+
     $('.contentContainer').html(
       `
       <!-- Star Return Image page-->
@@ -278,7 +280,7 @@ function displayStarSearchData(data) {
           <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
         </section>
       </div>
-          `
+      `
     )
   }
 }
@@ -340,23 +342,23 @@ function displayNebulaSearchData(data){
     $('.contentContainer').html(
       `
       <!-- Nebula Return Image page-->
-        <div class="nebula-image-page">
-          <section role="region" class="container css-container">
-            <h2>Nebulae Search Results</h2>
-            <p>Choose to search for Planets, Stars, or Nebulae</p>
-            <div class="search-options">
-              <button class="planets-btn css-search-buttons" type="button">Planets</button>
-              <button class="stars-btn css-search-buttons" type="button">Stars</button>
-              <button class="nebulae-btn css-search-buttons" type="button">Nebulas</button>
-            </div>
-            <div>
-              <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
-            </div>
-            <div class="js-search-results">
-            ${nebulaList.join('')}
+      <div class="nebula-image-page">
+        <section role="region" class="container css-container">
+          <h2>Nebulae Search Results</h2>
+          <p>Choose to search for Planets, Stars, or Nebulae</p>
+          <div class="search-options">
+            <button class="planets-btn css-search-buttons" type="button">Planets</button>
+            <button class="stars-btn css-search-buttons" type="button">Stars</button>
+            <button class="nebulae-btn css-search-buttons" type="button">Nebulas</button>
+          </div>
+          <div>
             <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
-          </section>
-        </div>
+          </div>
+          <div class="js-search-results">
+          ${nebulaList.join('')}
+          <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
+        </section>
+      </div>
       `
     )
   } 
@@ -365,66 +367,66 @@ function displayNebulaSearchData(data){
 // Generates string for showStarSearchPage()
 function generateStarSearchPageString(){
   return`
-  <div class="star-search-page">
-    <section role="region" class="container css-container">
-      <h2>Star Page</h2>
-      <!-- considering adding radio buttons?  there's a limited number of planets.-->
-      <p>Which Stars do you want to View?</p>
-      <form class='search-star-form'>
-        <div>
-          <label for="star-input">Search Star</label>
-          <input class="css-input-forms" type="text" id="star-input" name="Star" required>
-          <button class="css-search-buttons" type="submit">Search</button>
-        </div>
-      </form>
-      <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
-      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
-    </section>
-  </div>
+    <div class="star-search-page">
+      <section role="region" class="container css-container">
+        <h2>Star Page</h2>
+        <!-- considering adding radio buttons?  there's a limited number of planets.-->
+        <p>Which Stars do you want to View?</p>
+        <form class='search-star-form'>
+          <div>
+            <label for="star-input">Search Star</label>
+            <input class="css-input-forms" type="text" id="star-input" name="Star" required>
+            <button class="css-search-buttons" type="submit">Search</button>
+          </div>
+        </form>
+        <p>Possible search options: Betelgeuse, Vega, Witch, star system</p>
+        <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
+      </section>
+    </div>
   `
 }
 
 // Generates string for showNebulasSearchPage ()
 function generateNebulaSearchPageString(){
   return`
-  <!-- Nebula Search page-->
-  <div class="nebula-search-page">
-    <section role="region" class="container css-container">
-      <h2>Nebula Page</h2>
-      <p>Which Nebulas do you want to View?</p>
-      <form class='search-nebulae-form'>
-        <div>
-          <label for="nebula-input">Search Nebulae</label>
-          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required>
-          <button class="css-search-buttons" type="submit">Search</button>
-        </div>
-      </form>
-      <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
-      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button> 
-    </section>
-  </div>
+    <!-- Nebula Search page-->
+    <div class="nebula-search-page">
+      <section role="region" class="container css-container">
+        <h2>Nebula Page</h2>
+        <p>Which Nebulas do you want to View?</p>
+        <form class='search-nebulae-form'>
+          <div>
+            <label for="nebula-input">Search Nebulae</label>
+            <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required>
+            <button class="css-search-buttons" type="submit">Search</button>
+          </div>
+        </form>
+        <p>Possible search options: Orion Nebula, Helix Nebula, Trifid Nebula, Nebula</p> 
+        <button class="homepage-btn css-homepage-btn" type="button">Start Over</button> 
+      </section>
+    </div>
   `
 }
 
 // Generates html for the Planet search page
 function generatePlanetSearchPageString(){
   return`
-  <!-- Planet page for search-->
-  <div class="planet-search-page">
-    <section role="region" class="container css-container">
-      <h2>Planet Page</h2>
-      <p>Which Planet do you want to View?</p>
-      <form class='search-planet-form'>
-        <div>
-          <label for="planet-input">Search Planet</label>
-          <input class="css-input-forms" type="text" id="planet-input" name="planet" required>
-          <button class="css-search-buttons" type="submit">Search</button>
-        </div>
-      </form>
-      <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
-      <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>  
-  </section>
-  </div>
+    <!-- Planet page for search-->
+    <div class="planet-search-page">
+      <section role="region" class="container css-container">
+        <h2>Planet Page</h2>
+        <p>Which Planet do you want to View?</p>
+        <form class='search-planet-form'>
+          <div>
+            <label for="planet-input">Search Planet</label>
+            <input class="css-input-forms" type="text" id="planet-input" name="planet" required>
+            <button class="css-search-buttons" type="submit">Search</button>
+          </div>
+        </form>
+        <p>Possible search options: Mercury, Venus, Neptune, Pluto, planet</p>
+        <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>  
+    </section>
+    </div>
   `
 }
 
