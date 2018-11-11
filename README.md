@@ -43,7 +43,7 @@ Library, then up to five results will show on her screen.
 ![Search Page](/images/starSearchSpaceView.png "Search Page")
 
 #### Results
-![Results Page](/images/resultsPageSpaceView "Results Page")
+![Results Page](/images/resultsPageSpaceView.png "Results Page")
 
 
 ### Notes on Accessibility
