@@ -9,10 +9,8 @@ to try.
 https://sburgess287.github.io/spaceViewProject/
 
 ### Motivation
-There are really amazing documents available on the NASA website. I hope to make
-searches for space artifacts more accessible to users of all ages. I want to 
-inspire wonder for the universe by showing these incredible images on any size 
-device.
+I want to inspire wonder for the universe by making the amazing artifacts available 
+from the NASA website more easily accessible, starting with Planets, Stars, and Nebulae.
 
 ### Technology
 - HTML
@@ -21,41 +19,52 @@ device.
 - jQuery
 
 ### API
-images.nasa.gov API
-https://api.nasa.gov/api.html#Images
+- images.nasa.gov API
+- https://api.nasa.gov/api.html#Images
 
 ### Summary
-On first view, the SpaceView Project shows options to search by Planet, Star, or Nebulae.
-She is able to click on any of those choice, and is brought to a screen with help
-text of options to search. She types in an item inside that category, and clicks Search.
-If the name matches the title or description of an image in the NASA Image and Video 
-Library, then up to five results will show on her screen. She can search on desktop, 
-mobile, or tablet devices. If no results are found, she is shown that information on 
-a page, along with new helper text. She may choose to search again, start over, or 
-search in another category. Any results images are clickable to link out to the NASA
-site for a larger size information, along with the link underneath.
+- On first view, the SpaceView Project shows options to search by Planet, Star, or 
+Nebulae.
+- She is able to click on any of those choices
+- She types in an item inside that category, and clicks Search.
+- If the name matches the title or description of an image in the NASA Image and Video 
+Library, then up to five results will show on her screen. 
+- If no results are found, she is shown new options to try. 
+- She may choose to search again, start over, or search in another category. 
+- Any results images are clickable to link out to the NASA site, along with link beneath.
+- SpaceView may be enjoyed on any viewport size; mobile, tablet, desktop.
 
 ### Screenshots
 
-Placeholder
+#### Home Page
+![Home Page](/images/homePageSpaceView.png "Home Page")
 
-### Further Information on Accessibility
+#### Search
+![Search Page](/images/starSearchSpaceView.png "Search Page")
+
+#### Results
+![Results Page](/images/resultsPageSpaceView "Results Page")
+
+
+### Notes on Accessibility
 - The background for the SpaceView Project on desktop and tablet size viewports is a 
 gradient set in the css. The range of color in the gradient is from #E1E6E3 to #A4EEE9.
 I verified the contrast ratio is over 12:1 for both, compared to the text color used
 in the app. When running AXE to verify accessibility on Chrome, there was an error
 returned that it could not verify contrast because a gradient is being used. 
+- Various roles in html elements are used to ensure backwards compatibility 
+with older browsers.
 
 ### Next Steps
 - Add a logo! I'd like to add a spiral similar to the favicon to the end of the text. I 
 like the current font, and a vector image will make it pop.
 - Update the JavaScript to consolidate repeating (ie: page html) code into
 separate functions.
-- Add more search options; Space Stations, Telescopes, Missions, Moons, Space Probes, 
+- Add more search options; Space Stations, Telescopes, Missions, Moons, Spacecrafts, 
 Asteroids.
+- Design and implement fancy spaceship buttons.
 
 ### Credits
-Thank you to Marc, Joe, Katie, and Skandar for awesome feedback while I was building
-out the app. 
+Thank you to Katie, Marc, Joe, Skandar, and Dr. 42 for awesome feedback.
 
 
