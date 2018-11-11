@@ -54,6 +54,8 @@ separate functions.
 - Add more search options; Space Stations, Telescopes, Missions, Moons, Space Probes, 
 Asteroids.
 
-
+### Credits
+Thank you to Marc, Joe, Katie, and Skandar for awesome feedback while I was building
+out the app. 
 
 
