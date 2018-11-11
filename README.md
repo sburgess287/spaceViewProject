@@ -9,10 +9,8 @@ to try.
 https://sburgess287.github.io/spaceViewProject/
 
 ### Motivation
-There are really amazing documents available on the NASA website. I hope to make
-searches for space artifacts more accessible to users of all ages. I want to 
-inspire wonder for the universe by showing these incredible images on any size 
-device.
+I want to inspire wonder for the universe by making the amazing artifacts available 
+from the NASA website more easily accessible, starting with Planets, Stars, and Nebulae.
 
 ### Technology
 - HTML
