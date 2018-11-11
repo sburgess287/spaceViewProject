@@ -19,23 +19,24 @@ from the NASA website more easily accessible, starting with Planets, Stars, and 
 - jQuery
 
 ### API
-images.nasa.gov API
-https://api.nasa.gov/api.html#Images
+- images.nasa.gov API
+- https://api.nasa.gov/api.html#Images
 
 ### Summary
-On first view, the SpaceView Project shows options to search by Planet, Star, or Nebulae.
-She is able to click on any of those choice, and is brought to a screen with help
-text of options to search. She types in an item inside that category, and clicks Search.
-If the name matches the title or description of an image in the NASA Image and Video 
-Library, then up to five results will show on her screen. She can search on desktop, 
-mobile, or tablet devices. If no results are found, she is shown that information on 
-a page, along with new helper text. She may choose to search again, start over, or 
-search in another category. Any results images are clickable to link out to the NASA
-site for a larger size information, along with the link underneath.
+- On first view, the SpaceView Project shows options to search by Planet, Star, or 
+Nebulae.
+- She is able to click on any of those choices
+-  She types in an item inside that category, and clicks Search.
+- If the name matches the title or description of an image in the NASA Image and Video 
+Library, then up to five results will show on her screen. 
+- If no results are found, she is shown new options to try. 
+- She may choose to search again, start over, or search in another category. 
+- Any results images are clickable to link out to the NASA site, along with link beneath.
+- SpaceView may be enjoyed on any viewport size; mobile, tablet, desktop
 
 ### Screenshots
 
-Placeholder
+Placeholder TEXT
 
 ### Further Information on Accessibility
 - The background for the SpaceView Project on desktop and tablet size viewports is a 
