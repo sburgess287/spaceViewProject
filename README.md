@@ -46,7 +46,7 @@ Library, then up to five results will show on her screen.
 ![Results Page](/images/resultsPageSpaceView "Results Page")
 
 
-### Further Information on Accessibility
+### Notes on Accessibility
 - The background for the SpaceView Project on desktop and tablet size viewports is a 
 gradient set in the css. The range of color in the gradient is from #E1E6E3 to #A4EEE9.
 I verified the contrast ratio is over 12:1 for both, compared to the text color used
