@@ -36,7 +36,15 @@ Library, then up to five results will show on her screen.
 
 ### Screenshots
 
-Placeholder TEXT
+#### Home Page
+![Home Page](/images/homePageSpaceView.png "Home Page")
+
+#### Search
+![Search Page](/images/starSearchSpaceView.png "Search Page")
+
+#### Results
+![Results Page](/images/resultsPageSpaceView "Results Page")
+
 
 ### Further Information on Accessibility
 - The background for the SpaceView Project on desktop and tablet size viewports is a 
@@ -57,7 +65,6 @@ Asteroids.
 - Design and implement fancy spaceship buttons.
 
 ### Credits
-Thank you to Katie, Marc, Joe, Skandar, and Dr. 42 for awesome feedback. I haven't done it
-all but I have notes on a spreadsheet.
+Thank you to Katie, Marc, Joe, Skandar, and Dr. 42 for awesome feedback.
 
 
