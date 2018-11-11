@@ -35,5 +35,25 @@ a page, along with new helper text. She may choose to search again, start over, 
 search in another category. Any results images are clickable to link out to the NASA
 site for a larger size information, along with the link underneath.
 
+### Screenshots
+
+Placeholder
+
+### Further Information on Accessibility
+- The background for the SpaceView Project on desktop and tablet size viewports is a 
+gradient set in the css. The range of color in the gradient is from #E1E6E3 to #A4EEE9.
+I verified the contrast ratio is over 12:1 for both, compared to the text color used
+in the app. When running AXE to verify accessibility on Chrome, there was an error
+returned that it could not verify contrast because a gradient is being used. 
+
+### Next Steps
+- Add a logo! I'd like to add a spiral similar to the favicon to the end of the text. I 
+like the current font, and a vector image will make it pop.
+- Update the JavaScript to consolidate repeating (ie: page html) code into
+separate functions.
+- Add more search options; Space Stations, Telescopes, Missions, Moons, Space Probes, 
+Asteroids.
+
+
 
 
