@@ -110,15 +110,6 @@ function generateNoNebulasFoundPageString() {
         <button class="nebulae-btn css-search-buttons" type="button">Nebulas</button>
       </div>
       <p>Or ...Please try again!</p>
-      <p>Which Nebula do you want to View?</p>
-      <form class="search-nebulae-form">
-        <div>
-          <label for="nebula-input">Search Nebulae</label>
-          <!--add it back Removing required on this input because they can also choose other Planets/Stars/Nebula buttons-->
-          <input class="css-input-forms" type="text" id="nebula-input" name="Nebula" required> 
-          <button class="css-search-buttons" type="submit">Search</button>
-        </div>
-      </form>
       <p>Possible search options: Butterfly Nebula, Ghost of Jupiter, Orion Nebula, Ring Nebula, Sagittarius,</p>
       <button class="homepage-btn css-homepage-btn" type="button">Start Over</button>
     </section>

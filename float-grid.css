@@ -90,6 +90,14 @@
     min-height: 7em;
   }
 
+  .css-header {
+    padding-bottom: 0;
+  }
+
+  .css-image-description-text {
+    font-size: small;
+  }
+
   h1 {
       text-align: center;
       padding-bottom: 0;
@@ -114,6 +122,7 @@
   .linkStyleInfo {
       padding: 15%;
       text-align: center;
+      font-size: small;
   }
 
   .css-input-forms {
